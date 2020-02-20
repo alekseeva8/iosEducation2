@@ -12,6 +12,8 @@
 		F34C1E0723FC5C9E00094DA0 /* XIBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C1E0523FC5C9E00094DA0 /* XIBTableViewCell.swift */; };
 		F34C1E0823FC5C9E00094DA0 /* XIBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F34C1E0623FC5C9E00094DA0 /* XIBTableViewCell.xib */; };
 		F35C834D23FE630E005D69BC /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C834C23FE630E005D69BC /* Storage.swift */; };
+		F35C834F23FEA53E005D69BC /* ProfileManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C834E23FEA53E005D69BC /* ProfileManagerViewController.swift */; };
+		F35C835123FEB1C4005D69BC /* Validata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C835023FEB1C4005D69BC /* Validata.swift */; };
 		F36F63A523FA771900FEB355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F63A423FA771900FEB355 /* AppDelegate.swift */; };
 		F36F63A723FA771900FEB355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F63A623FA771900FEB355 /* SceneDelegate.swift */; };
 		F36F63A923FA771900FEB355 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F63A823FA771900FEB355 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 		F34C1E0523FC5C9E00094DA0 /* XIBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBTableViewCell.swift; sourceTree = "<group>"; };
 		F34C1E0623FC5C9E00094DA0 /* XIBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XIBTableViewCell.xib; sourceTree = "<group>"; };
 		F35C834C23FE630E005D69BC /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		F35C834E23FEA53E005D69BC /* ProfileManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManagerViewController.swift; sourceTree = "<group>"; };
+		F35C835023FEB1C4005D69BC /* Validata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validata.swift; sourceTree = "<group>"; };
 		F36F63A123FA771900FEB355 /* HW11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36F63A423FA771900FEB355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36F63A623FA771900FEB355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 				F36F63A623FA771900FEB355 /* SceneDelegate.swift */,
 				F36F63A823FA771900FEB355 /* ViewController.swift */,
 				F36F63AA23FA771900FEB355 /* Main.storyboard */,
+				F35C834E23FEA53E005D69BC /* ProfileManagerViewController.swift */,
 				F34C1E0323FC59BB00094DA0 /* CodeTableViewCell.swift */,
 				F36F63BC23FA929C00FEB355 /* TableVViewController.swift */,
 				F34C1E0523FC5C9E00094DA0 /* XIBTableViewCell.swift */,
@@ -85,6 +90,7 @@
 				F36F63BE23FAAF6F00FEB355 /* ProfileViewController.swift */,
 				F36F63BA23FA83EC00FEB355 /* MainViewController.swift */,
 				F35C834C23FE630E005D69BC /* Storage.swift */,
+				F35C835023FEB1C4005D69BC /* Validata.swift */,
 				F36F63B823FA790D00FEB355 /* SignInViewController.swift */,
 				F36F63AD23FA771A00FEB355 /* Assets.xcassets */,
 				F36F63AF23FA771A00FEB355 /* LaunchScreen.storyboard */,
@@ -170,11 +176,13 @@
 				F34C1E0423FC59BB00094DA0 /* CodeTableViewCell.swift in Sources */,
 				F35C834D23FE630E005D69BC /* Storage.swift in Sources */,
 				F36F63BD23FA929C00FEB355 /* TableVViewController.swift in Sources */,
+				F35C835123FEB1C4005D69BC /* Validata.swift in Sources */,
 				F34C1E0723FC5C9E00094DA0 /* XIBTableViewCell.swift in Sources */,
 				F36F63B923FA790D00FEB355 /* SignInViewController.swift in Sources */,
 				F36F63A923FA771900FEB355 /* ViewController.swift in Sources */,
 				F36F63A523FA771900FEB355 /* AppDelegate.swift in Sources */,
 				F36F63BF23FAAF6F00FEB355 /* ProfileViewController.swift in Sources */,
+				F35C834F23FEA53E005D69BC /* ProfileManagerViewController.swift in Sources */,
 				F36F63A723FA771900FEB355 /* SceneDelegate.swift in Sources */,
 				F36F63BB23FA83EC00FEB355 /* MainViewController.swift in Sources */,
 			);

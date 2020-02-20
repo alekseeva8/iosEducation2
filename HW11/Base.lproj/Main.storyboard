@@ -19,6 +19,9 @@
                                 <rect key="frame" x="90" y="374.5" width="234" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="loginTextFieldFromSignVC:" destination="AZz-9o-Uy4" eventType="editingDidEnd" id="Qg5-dx-b8l"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ7-rk-xR9" userLabel="passwordLabel">
                                 <rect key="frame" x="90" y="438.5" width="145.5" height="29"/>
@@ -30,6 +33,9 @@
                                 <rect key="frame" x="90" y="477.5" width="234" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="passwordTextFieldFromSignVC:" destination="AZz-9o-Uy4" eventType="editingDidEnd" id="0lj-vT-NOa"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cC2-1Y-6pG" userLabel="signInButton">
                                 <rect key="frame" x="172" y="546.5" width="70" height="36"/>
@@ -70,14 +76,15 @@
                     </view>
                     <connections>
                         <outlet property="loginLabel" destination="x3f-tT-ze1" id="tjm-Oz-3ri"/>
-                        <outlet property="loginTextField" destination="AaR-VB-Y4I" id="z0X-li-HrI"/>
+                        <outlet property="loginTextField" destination="AaR-VB-Y4I" id="QOL-4x-kOU"/>
                         <outlet property="passwordLabel" destination="WZ7-rk-xR9" id="CZb-Ug-LnF"/>
-                        <outlet property="passwordTextField" destination="kFh-oO-AOq" id="cfZ-BP-ojG"/>
+                        <outlet property="passwordTextField" destination="kFh-oO-AOq" id="DP8-6b-k9j"/>
                         <outlet property="signButton" destination="cC2-1Y-6pG" id="VQz-6R-OVS"/>
                         <segue destination="ukI-1m-eye" kind="presentation" identifier="fromSignToMain" modalPresentationStyle="fullScreen" id="9Wl-X5-pJJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="AZz-9o-Uy4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="113.79310344827587"/>
         </scene>

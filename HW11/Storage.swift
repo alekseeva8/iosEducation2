@@ -42,21 +42,21 @@ class Storage {
                 allStudentsString = try String(contentsOfFile: path)
             } catch { }
             // сплитуем string и получаем substring
-            let splittedString = allStudentsString.split(separator: ",")
+            let allStudentsSubstring = allStudentsString.split(separator: ",")
             // на каждой итерации перебора substring создаем экземпляр структуры и добавляем в новый пустой массив
             
-            var splittedPair: [Substring.SubSequence] = []
+            var studentSplitted: [Substring.SubSequence] = []
         
-        for pairNameSurname in splittedString {
-            splittedPair = pairNameSurname.split(separator: " ")
+        for studentSubstring in allStudentsSubstring {
+            studentSplitted = studentSubstring.split(separator: " ")
     
-            let splittedPairNonOptionalString = String(splittedPair.last ?? "")
+            let studentSplittedString = String(studentSplitted.last ?? "")
             
-            if splittedPairNonOptionalString == "муж" {
-                array.append(Student(name: String(splittedPair.first ?? ""), surname: String(splittedPair[1]), gender: .male))
+            if studentSplittedString == "муж" {
+                array.append(Student(name: String(studentSplitted.first ?? ""), surname: String(studentSplitted[1]), gender: .male))
             }
             else {
-               array.append(Student(name: String(splittedPair.first ?? ""), surname: String(splittedPair[1]), gender: .female))
+               array.append(Student(name: String(studentSplitted.first ?? ""), surname: String(studentSplitted[1]), gender: .female))
             }
         }
         
