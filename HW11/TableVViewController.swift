@@ -12,7 +12,7 @@ let storageChild = Storage()
 var studentsNew = storageChild.students
 
 var studentNameForProfileVC = ""
-
+var studentSurnameForProfileVC = ""
 
 class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -30,20 +30,33 @@ class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDa
         indexPath: IndexPath) -> UITableViewCell {
         
         var studentCell: UITableViewCell
-        switch indexPath.row % 4 {
-        case 0:
-            studentCell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath)
+        switch studentsNew[indexPath.row].gender {
+        case .male:
+            studentCell = tableView.dequeueReusableCell(withIdentifier: "male", for: indexPath)
             studentCell.textLabel?.text = studentsNew[indexPath.row].name
-        case 1:
-            studentCell = tableView.dequeueReusableCell(withIdentifier: "yellow", for: indexPath)
+            studentCell.detailTextLabel?.text = studentsNew[indexPath.row].surname
+        case .female:
+            studentCell = tableView.dequeueReusableCell(withIdentifier: "female", for: indexPath)
             studentCell.textLabel?.text = studentsNew[indexPath.row].name
-        case 2:
-            studentCell = tableView.dequeueReusableCell(withIdentifier: CodeTableViewCell.id, for: indexPath)
-            studentCell.textLabel?.text = studentsNew[indexPath.row].name
-        default:
-            studentCell = tableView.dequeueReusableCell(withIdentifier: XIBTableViewCell.id, for: indexPath)
-            studentCell.textLabel?.text = studentsNew[indexPath.row].name
+            studentCell.detailTextLabel?.text = studentsNew[indexPath.row].surname
         }
+        
+//        switch indexPath.row % 4 {
+//        case 0:
+//            studentCell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath)
+//            studentCell.textLabel?.text = studentsNew[indexPath.row].name
+//        case 1:
+//            studentCell = tableView.dequeueReusableCell(withIdentifier: "yellow", for: indexPath)
+//            studentCell.textLabel?.text = studentsNew[indexPath.row].name
+//            studentCell.detailTextLabel?.text = studentsNew[indexPath.row].surname
+//        case 2:
+//            studentCell = tableView.dequeueReusableCell(withIdentifier: CodeTableViewCell.id, for: indexPath)
+//            studentCell.textLabel?.text = studentsNew[indexPath.row].name
+//        default:
+//            studentCell = tableView.dequeueReusableCell(withIdentifier: XIBTableViewCell.id, for: indexPath)
+//            studentCell.textLabel?.text = studentsNew[indexPath.row].name
+//        }
+        
         return studentCell
     }
     
@@ -51,6 +64,7 @@ class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //tableView.deselectRow(at: indexPath, animated: true)
         //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
         studentNameForProfileVC = studentsNew[indexPath.row].name
+        studentSurnameForProfileVC = studentsNew[indexPath.row].surname
         
     //navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
         performSegue(withIdentifier: segueID, sender: nil)
@@ -91,6 +105,7 @@ class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let profileVC = segue.destination as? ProfileViewController {
             profileVC.profileNameLabelInformation = studentNameForProfileVC
+            profileVC.profileSurnameLabelInformation = studentSurnameForProfileVC
         }
     }
     

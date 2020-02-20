@@ -19,16 +19,15 @@ class Storage {
     struct Student {
         var name: String
         var surname: String
-        var age: Int
-//        var gender: Gender
-//
-//        enum Gender {
-//        case male, female
-//    }
-        init(name: String, surname: String = "", age: Int = 20) {
+        var gender: Gender
+
+        enum Gender {
+        case male, female
+    }
+        init(name: String, surname: String, gender: Gender) {
             self.name = name
             self.surname = surname
-            self.age = age
+            self.gender = gender
         }
     }
     
@@ -43,12 +42,24 @@ class Storage {
                 allStudentsString = try String(contentsOfFile: path)
             } catch { }
             // сплитуем string и получаем substring
-            let splittedNames = allStudentsString.split(separator: ",")
+            let splittedString = allStudentsString.split(separator: ",")
             // на каждой итерации перебора substring создаем экземпляр структуры и добавляем в новый пустой массив
-            splittedNames.forEach { name in
-                array.append(Student(name: String(name)))
-            }
             
+            var splittedPair: [Substring.SubSequence] = []
+        
+        for pairNameSurname in splittedString {
+            splittedPair = pairNameSurname.split(separator: " ")
+    
+            let splittedPairNonOptionalString = String(splittedPair.last ?? "")
+            
+            if splittedPairNonOptionalString == "муж" {
+                array.append(Student(name: String(splittedPair.first ?? ""), surname: String(splittedPair[1]), gender: .male))
+            }
+            else {
+               array.append(Student(name: String(splittedPair.first ?? ""), surname: String(splittedPair[1]), gender: .female))
+            }
+        }
+        
             return array
     }
     
