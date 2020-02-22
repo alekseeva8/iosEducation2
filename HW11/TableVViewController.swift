@@ -20,26 +20,17 @@ class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     let segueID = "profileVC"
     
-    
     //задаем число рядов таблицы
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        studentsNew.count
+        //studentsNew.count
+        return storageChild.tableView(tableView, numberOfRowsInSection: 10)
     }
+    
     //определяем характеристики ячейки для каждого ряда
     func tableView(_ tableView: UITableView, cellForRowAt
         indexPath: IndexPath) -> UITableViewCell {
-        
-        var studentCell: UITableViewCell
-        switch studentsNew[indexPath.row].gender {
-        case .male:
-            studentCell = tableView.dequeueReusableCell(withIdentifier: "male", for: indexPath)
-            studentCell.textLabel?.text = studentsNew[indexPath.row].name
-            studentCell.detailTextLabel?.text = studentsNew[indexPath.row].surname
-        case .female:
-            studentCell = tableView.dequeueReusableCell(withIdentifier: "female", for: indexPath)
-            studentCell.textLabel?.text = studentsNew[indexPath.row].name
-            studentCell.detailTextLabel?.text = studentsNew[indexPath.row].surname
-        }
+        storageChild.tableView(tableView, cellForRowAt: indexPath)
+    }
         
 //        switch indexPath.row % 4 {
 //        case 0:
@@ -57,8 +48,6 @@ class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //            studentCell.textLabel?.text = studentsNew[indexPath.row].name
 //        }
         
-        return studentCell
-    }
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tableView.deselectRow(at: indexPath, animated: true)
@@ -91,9 +80,6 @@ class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let storageChild = Storage()
-//        let studentsNew = storageChild.students
         
         tableView.register(CodeTableViewCell.self, forCellReuseIdentifier: CodeTableViewCell.id)
         

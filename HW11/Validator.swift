@@ -46,9 +46,7 @@ class Validator {
                            numberCorrect += 1
                        }
                    }
-           let condition3 = numberCorrect == login.count
-       
-           return condition3
+           return numberCorrect == login.count
        }
     
     

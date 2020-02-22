@@ -6,13 +6,14 @@
 //  Copyright © 2020 Elena Alekseeva. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class Storage {
-    var students: [Student]
-    init() {
-        students = []
+class Storage: NSObject, UITableViewDataSource {
+    
+    var students: [Student] = []
+    override init() {
     //записываем массив имен в массив students
+        super.init()
         students = prepareArray()
     }
     
@@ -30,6 +31,28 @@ class Storage {
             self.gender = gender
         }
     }
+    
+    //2 обязательные функции
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return students.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var studentCell: UITableViewCell
+        switch studentsNew[indexPath.row].gender {
+        case .male:
+            studentCell = tableView.dequeueReusableCell(withIdentifier: "male", for: indexPath)
+            studentCell.textLabel?.text = studentsNew[indexPath.row].name
+            studentCell.detailTextLabel?.text = studentsNew[indexPath.row].surname
+        case .female:
+            studentCell = tableView.dequeueReusableCell(withIdentifier: "female", for: indexPath)
+            studentCell.textLabel?.text = studentsNew[indexPath.row].name
+            studentCell.detailTextLabel?.text = studentsNew[indexPath.row].surname
+        }
+        return studentCell
+    }
+
     
     //функция, переводящяя Name.txt в массив имен. [при вызове запишем массив в массив students]
     func prepareArray() -> [Student] {
