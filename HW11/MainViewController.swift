@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
         welcomeLabel.text = loginInformation
     }
     
-
+    //unwind segue от экранов Profile и Students к Main экрану
+  @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {}
 
 }

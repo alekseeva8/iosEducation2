@@ -9,12 +9,17 @@
 import UIKit
 
 class Storage: NSObject, UITableViewDataSource {
+     
     
     var students: [Student] = []
+    //weak var dataSource: UITableViewDataSource?
+    //var data1: Int
+    
     override init() {
     //записываем массив имен в массив students
         super.init()
         students = prepareArray()
+//        data1 = tableView((tableView, numberOfRowsInSection: section))
     }
     
     struct Student {
@@ -32,7 +37,9 @@ class Storage: NSObject, UITableViewDataSource {
         }
     }
     
+    
     //2 обязательные функции
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return students.count
     }

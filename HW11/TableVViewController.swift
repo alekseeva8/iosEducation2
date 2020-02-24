@@ -14,9 +14,17 @@ var studentsNew = storageChild.students
 var studentNameForProfileVC = ""
 var studentSurnameForProfileVC = ""
 
+ let mytableView = TableVViewController()
+
 class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    //weak var dataSource: UITableViewDataSource?
+    
+//    func getData() {
+//        dataSource?.tableView(tableView, numberOfRowsInSection: 10)
+//       dataSource?.tableView(tableView, cellForRowAt: indexPath)
+//    }
     
     let segueID = "profileVC"
     
@@ -25,8 +33,8 @@ class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //studentsNew.count
         return storageChild.tableView(tableView, numberOfRowsInSection: 10)
     }
-    
-    //определяем характеристики ячейки для каждого ряда
+
+    //определяем характеристики ячейки для кажprivate дого ряда
     func tableView(_ tableView: UITableView, cellForRowAt
         indexPath: IndexPath) -> UITableViewCell {
         storageChild.tableView(tableView, cellForRowAt: indexPath)
@@ -55,7 +63,7 @@ class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDa
         studentNameForProfileVC = studentsNew[indexPath.row].name
         studentSurnameForProfileVC = studentsNew[indexPath.row].surname
         
-    //navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+
         performSegue(withIdentifier: segueID, sender: nil)
         
     }
@@ -82,9 +90,10 @@ class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         tableView.register(CodeTableViewCell.self, forCellReuseIdentifier: CodeTableViewCell.id)
-        
         tableView.register(UINib(nibName: "XIBTableViewCell", bundle: nil), forCellReuseIdentifier: XIBTableViewCell.id)
         
+ //      mytableView.dataSource = storageChild
+//        mytableView.getData()
     }
 
      //передача имени студента в ProfileVC
@@ -94,8 +103,11 @@ class TableVViewController: UIViewController, UITableViewDelegate, UITableViewDa
             profileVC.profileSurnameLabelInformation = studentSurnameForProfileVC
         }
     }
+   
     
     }
+
+
     
     
 

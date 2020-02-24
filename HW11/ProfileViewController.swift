@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         profileNameLabel.text = profileNameLabelInformation
         profileSurnameLabel.text = profileSurnameLabelInformation
+        
     }
     
 
