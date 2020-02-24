@@ -26,9 +26,12 @@ class SignInViewController: UIViewController {
         //условия для перехода к другому экрану (при нажатии на кнопку)
         let validatorChild = Validator(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
         
-        if Validator.isLoginCorrect(validatorChild)() == true && Validator.isLoginCorrect2(validatorChild)() == true && Validator.isPasswordCorrect(validatorChild)() == true {
+        if Validator.isLoginCorrect(validatorChild)() == true && Validator.isLoginContainsCorrectSymbols(validatorChild)() == true && Validator.isPasswordCorrect(validatorChild)() == true {
 
              performSegue(withIdentifier: "fromSignToMain", sender: nil)
+        }
+        else {
+            validatorChild.alertSending(self)
         }
         
     }

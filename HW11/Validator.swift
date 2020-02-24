@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 class Validator {
     
     var login: String
     var password: String
-    var loginIsCorrect: Bool = false
-    var passwordIsCorrect: Bool = false
+    var loginIsCorrect = false
+    var passwordIsCorrect = false
     
     init(login: String, password: String) {
             self.login = login
@@ -24,7 +25,6 @@ class Validator {
     func isLoginCorrect() -> Bool {
         if login.count > 0 {
             loginIsCorrect = true
-            
         }
         else {
             loginIsCorrect = false
@@ -32,7 +32,7 @@ class Validator {
         return loginIsCorrect
     }
     
-    func isLoginCorrect2() -> Bool {
+    func isLoginContainsCorrectSymbols() -> Bool {
            var arrayOfActualSymbols: [Int] = []
            let rangeOfCorrectSymbols1 = 65...90
            let rangeOfCorrectSymbols2 = 48...57
@@ -58,6 +58,13 @@ class Validator {
             passwordIsCorrect = false
         }
         return passwordIsCorrect
+    }
+    
+    func alertSending(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Incorrect login or password", message: "Login must contain latin symbols and numbers. Password must contain more than 6 symbols", preferredStyle: UIAlertController.Style.alert)
+        let cancelAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+         alertController.addAction(cancelAction)
+        (sender as AnyObject).present(alertController, animated: true, completion: nil)
     }
     
 }
