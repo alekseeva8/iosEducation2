@@ -25,14 +25,14 @@ class SignInViewController: UIViewController {
     @IBAction func signInButtonPressed(_ sender: Any) {
 //        let validator = Validator()
         //условия для перехода к другому экрану (при нажатии на кнопку)
-        let validatorChild = Validator(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
+        let validator = Validator(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
         
-        if Validator.isLoginCorrect(validatorChild)() == true && Validator.isLoginContainsCorrectSymbols(validatorChild)() == true && Validator.isPasswordCorrect(validatorChild)() == true {
+        if Validator.isLoginCorrect(validator)() == true && Validator.isLoginContainsCorrectSymbols(validator)() == true && Validator.isPasswordCorrect(validator)() == true {
 
              performSegue(withIdentifier: "fromSignToMain", sender: nil)
         }
         else {
-            validatorChild.alertSending(self)
+            validator.alertSending(self)
         }
         
     }
