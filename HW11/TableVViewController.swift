@@ -8,22 +8,22 @@
 
 import UIKit
 
-let storageChild = Storage()
-var students = storageChild.students
-
-var studentNameForProfileVC = ""
-var studentSurnameForProfileVC = ""
-
 
 class TableVViewController: UIViewController, UITableViewDelegate {
-    
+
+    let storage = Storage()
+
+    var studentNameForProfileVC = ""
+    var studentSurnameForProfileVC = ""
+
     @IBOutlet weak var tableView: UITableView!
-        
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let student = storage.students[indexPath.row]
         //tableView.deselectRow(at: indexPath, animated: true)
         //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
-        studentNameForProfileVC = students[indexPath.row].name
-        studentSurnameForProfileVC = students[indexPath.row].surname
+        studentNameForProfileVC = student.name
+        studentSurnameForProfileVC = student.surname
         
         performSegue(withIdentifier: "profileVC" , sender: nil)
     }
@@ -37,7 +37,7 @@ class TableVViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       tableView.dataSource = storageChild
+       tableView.dataSource = storage
     }
 
      //передача имени студента в ProfileVC

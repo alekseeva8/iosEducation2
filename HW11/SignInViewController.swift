@@ -23,6 +23,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInButtonPressed(_ sender: Any) {
+//        let validator = Validator()
         //условия для перехода к другому экрану (при нажатии на кнопку)
         let validatorChild = Validator(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
         
