@@ -10,16 +10,12 @@ import UIKit
 
 class Storage: NSObject, UITableViewDataSource {
      
-    
     var students: [Student] = []
-    //weak var dataSource: UITableViewDataSource?
-    //var data1: Int
     
     override init() {
     //записываем массив имен в массив students
         super.init()
         students = prepareArray()
-//        data1 = tableView((tableView, numberOfRowsInSection: section))
     }
     
     struct Student {
@@ -37,25 +33,25 @@ class Storage: NSObject, UITableViewDataSource {
         }
     }
     
-    
-    //2 обязательные функции
-    
+    //2 обязательные функции DataSource
+    //задаем число рядов таблицы
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return students.count
     }
-
+    
+    //определяем характеристики ячейки для кажprivate дого ряда
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var studentCell: UITableViewCell
-        switch studentsNew[indexPath.row].gender {
+        switch students[indexPath.row].gender {
         case .male:
             studentCell = tableView.dequeueReusableCell(withIdentifier: "male", for: indexPath)
-            studentCell.textLabel?.text = studentsNew[indexPath.row].name
-            studentCell.detailTextLabel?.text = studentsNew[indexPath.row].surname
+            studentCell.textLabel?.text = students[indexPath.row].name
+            studentCell.detailTextLabel?.text = students[indexPath.row].surname
         case .female:
             studentCell = tableView.dequeueReusableCell(withIdentifier: "female", for: indexPath)
-            studentCell.textLabel?.text = studentsNew[indexPath.row].name
-            studentCell.detailTextLabel?.text = studentsNew[indexPath.row].surname
+            studentCell.textLabel?.text = students[indexPath.row].name
+            studentCell.detailTextLabel?.text = students[indexPath.row].surname
         }
         return studentCell
     }
@@ -92,5 +88,17 @@ class Storage: NSObject, UITableViewDataSource {
         
             return array
     }
-    
+      
+      //функция редактирования рядов (DataSource)
+      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+          //важно удалить и из массива, и из таблички
+          //удаление из источника данных(массива)
+          if editingStyle == .delete {
+          students.remove(at: indexPath.row)
+          //удаление из таблички
+         // tableView.deleteRows(at: [indexPath], with: .fade)
+          tableView.reloadData()
+          }
+      }
+      
 }
