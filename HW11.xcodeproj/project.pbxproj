@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F31495E9240D0AFD005E7865 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31495E8240D0AFD005E7865 /* Student.swift */; };
 		F34C1E0223FC4D6C00094DA0 /* Names.txt in Resources */ = {isa = PBXBuildFile; fileRef = F34C1E0123FC4D6C00094DA0 /* Names.txt */; };
 		F34C1E0423FC59BB00094DA0 /* CodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C1E0323FC59BB00094DA0 /* CodeTableViewCell.swift */; };
 		F34C1E0723FC5C9E00094DA0 /* XIBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C1E0523FC5C9E00094DA0 /* XIBTableViewCell.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F31495E8240D0AFD005E7865 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		F34C1E0123FC4D6C00094DA0 /* Names.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Names.txt; sourceTree = "<group>"; };
 		F34C1E0323FC59BB00094DA0 /* CodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTableViewCell.swift; sourceTree = "<group>"; };
 		F34C1E0523FC5C9E00094DA0 /* XIBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBTableViewCell.swift; sourceTree = "<group>"; };
@@ -59,6 +61,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F31495E7240CFF75005E7865 /* Prototype cells */ = {
+			isa = PBXGroup;
+			children = (
+				F34C1E0623FC5C9E00094DA0 /* XIBTableViewCell.xib */,
+				F34C1E0523FC5C9E00094DA0 /* XIBTableViewCell.swift */,
+				F34C1E0323FC59BB00094DA0 /* CodeTableViewCell.swift */,
+			);
+			path = "Prototype cells";
+			sourceTree = "<group>";
+		};
 		F36F639823FA771900FEB355 = {
 			isa = PBXGroup;
 			children = (
@@ -82,16 +94,15 @@
 				F36F63A623FA771900FEB355 /* SceneDelegate.swift */,
 				F36F63A823FA771900FEB355 /* ViewController.swift */,
 				F36F63AA23FA771900FEB355 /* Main.storyboard */,
-				F34C1E0323FC59BB00094DA0 /* CodeTableViewCell.swift */,
-				F34C1E0523FC5C9E00094DA0 /* XIBTableViewCell.swift */,
-				F34C1E0623FC5C9E00094DA0 /* XIBTableViewCell.xib */,
 				F36F63B823FA790D00FEB355 /* SignInViewController.swift */,
 				F36F63BA23FA83EC00FEB355 /* MainViewController.swift */,
 				F36F63BC23FA929C00FEB355 /* TableVViewController.swift */,
 				F36F63BE23FAAF6F00FEB355 /* ProfileViewController.swift */,
-				F3FABC9B23FFE14100CD77B2 /* ProfileManager.swift */,
+				F31495E8240D0AFD005E7865 /* Student.swift */,
 				F35C834C23FE630E005D69BC /* Storage.swift */,
 				F3FABC9D23FFE1F600CD77B2 /* Validator.swift */,
+				F3FABC9B23FFE14100CD77B2 /* ProfileManager.swift */,
+				F31495E7240CFF75005E7865 /* Prototype cells */,
 				F36F63AD23FA771A00FEB355 /* Assets.xcassets */,
 				F36F63AF23FA771A00FEB355 /* LaunchScreen.storyboard */,
 				F36F63B223FA771A00FEB355 /* Info.plist */,
@@ -180,6 +191,7 @@
 				F3FABC9E23FFE1F600CD77B2 /* Validator.swift in Sources */,
 				F36F63B923FA790D00FEB355 /* SignInViewController.swift in Sources */,
 				F36F63A923FA771900FEB355 /* ViewController.swift in Sources */,
+				F31495E9240D0AFD005E7865 /* Student.swift in Sources */,
 				F3FABC9C23FFE14100CD77B2 /* ProfileManager.swift in Sources */,
 				F36F63A523FA771900FEB355 /* AppDelegate.swift in Sources */,
 				F36F63BF23FAAF6F00FEB355 /* ProfileViewController.swift in Sources */,

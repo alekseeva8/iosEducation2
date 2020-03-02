@@ -18,21 +18,6 @@ class Storage: NSObject, UITableViewDataSource {
         students = prepareArray()
     }
     
-    struct Student {
-        var name: String
-        var surname: String
-        var gender: Gender
-
-        enum Gender {
-        case male, female
-    }
-        init(name: String, surname: String, gender: Gender) {
-            self.name = name
-            self.surname = surname
-            self.gender = gender
-        }
-    }
-    
     //2 обязательные функции DataSource
     //задаем число рядов таблицы
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,9 +38,14 @@ class Storage: NSObject, UITableViewDataSource {
             studentCell.textLabel?.text = students[indexPath.row].name
             studentCell.detailTextLabel?.text = students[indexPath.row].surname
         }
+        //подключение таблицы к режиму редактирования. вызывает метод tableView(moveRowAt) и вызывает tableView(editingStyleForRowAt)
+        studentCell.showsReorderControl = true
         return studentCell
     }
+      
+}
 
+extension Storage {
     
     //функция, переводящяя Name.txt в массив имен. [при вызове запишем массив в массив students]
     func prepareArray() -> [Student] {
@@ -88,17 +78,23 @@ class Storage: NSObject, UITableViewDataSource {
         
             return array
     }
-      
-      //функция редактирования рядов (DataSource)
-      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-          //важно удалить и из массива, и из таблички
-          //удаление из источника данных(массива)
-          if editingStyle == .delete {
-          students.remove(at: indexPath.row)
-          //удаление из таблички
-         // tableView.deleteRows(at: [indexPath], with: .fade)
-          tableView.reloadData()
-          }
-      }
-      
-}
+    
+       
+    //функция редактирования рядов (DataSource)
+       func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+           //важно удалить и из массива, и из таблички
+           //удаление из источника данных(массива)
+           if editingStyle == .delete {
+           students.remove(at: indexPath.row)
+           //удаление из таблички
+          // tableView.deleteRows(at: [indexPath], with: .fade)
+           tableView.reloadData()
+           }
+       }
+    
+        //определяет стиль редактирования для ряда. здесь функция убирает круглый значек удаления
+    //    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+    //        return .none
+    //    }
+    
+   }

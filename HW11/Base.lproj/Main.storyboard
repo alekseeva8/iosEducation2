@@ -403,9 +403,19 @@
                                     <segue destination="suQ-lN-wmQ" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="9QY-2x-3cb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1x-Tf-Rpr" userLabel="Edit Button">
+                                <rect key="frame" x="364" y="52" width="34" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="hNa-7g-Cix" eventType="touchUpInside" id="jOW-BH-GzI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="WKS-zr-BMb" firstAttribute="trailing" secondItem="g1x-Tf-Rpr" secondAttribute="trailing" constant="16" id="8wo-wF-RK4"/>
+                            <constraint firstItem="g1x-Tf-Rpr" firstAttribute="top" secondItem="WKS-zr-BMb" secondAttribute="top" constant="8" id="9El-wP-61Y"/>
                             <constraint firstItem="WKS-zr-BMb" firstAttribute="bottom" secondItem="6Hm-qu-nQe" secondAttribute="bottom" id="9dx-gx-DkZ"/>
                             <constraint firstItem="TO6-Qy-3jw" firstAttribute="top" secondItem="WKS-zr-BMb" secondAttribute="top" constant="8" id="CgX-Wc-Gnp"/>
                             <constraint firstItem="6Hm-qu-nQe" firstAttribute="leading" secondItem="WKS-zr-BMb" secondAttribute="leading" id="EnT-fC-T6U"/>

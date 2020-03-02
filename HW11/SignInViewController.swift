@@ -17,23 +17,29 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var signButton: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     @IBAction func signInButtonPressed(_ sender: Any) {
         //условия для перехода к другому экрану (при нажатии на кнопку)
-        let validatorChild = Validator(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
         
-        if Validator.isLoginCorrect(validatorChild)() == true && Validator.isLoginContainsCorrectSymbols(validatorChild)() == true && Validator.isPasswordCorrect(validatorChild)() == true {
-
+        let loginTF = loginTextField.text ?? ""
+        let passwordTF = passwordTextField.text ?? ""
+        
+        let validator = Validator()
+        
+        if validator.isLoginCorrect(login: loginTF) == true && validator.isLoginContainsCorrectSymbols(login: loginTF) == true && validator.isPasswordCorrect(password: passwordTF) == true {
+            
+             signButton.backgroundColor = UIColor.favoriteColor
              performSegue(withIdentifier: "fromSignToMain", sender: nil)
         }
         else {
-            validatorChild.alertSending(self)
+            validator.alertSending(self)
         }
-        
     }
     
     //передача значения, введенного в loginTextField, в label другого viewcontrollerа
@@ -45,3 +51,11 @@ class SignInViewController: UIViewController {
         
     }
 }
+    //добавление property с моим любимым цветом
+    extension UIColor {
+    static var favoriteColor: UIColor {
+        return UIColor(red: 0.1, green: 0.8, blue: 0.1, alpha: 1.0)
+    }
+}
+
+

@@ -23,8 +23,4 @@ class ProfileViewController: UIViewController {
         profileSurnameLabel.text = profileSurnameLabelInformation
         
     }
-    
-
-    
-
 }
