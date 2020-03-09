@@ -13,8 +13,8 @@ var students = storage.students
 
 class TableVViewController: UIViewController, UITableViewDelegate {
 
-    var studentNameForProfileVC = ""
-    var studentSurnameForProfileVC = ""
+//    var studentNameForProfileVC = ""
+//    var studentSurnameForProfileVC = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,8 +23,8 @@ class TableVViewController: UIViewController, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tableView.deselectRow(at: indexPath, animated: true)
         //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
-        studentNameForProfileVC = students[indexPath.row].name
-        studentSurnameForProfileVC = students[indexPath.row].surname
+        ProfileManager.shared.name = students[indexPath.row].name
+        ProfileManager.shared.surname = students[indexPath.row].surname
         
         performSegue(withIdentifier: "profileVC" , sender: nil)
     }
@@ -51,12 +51,12 @@ class TableVViewController: UIViewController, UITableViewDelegate {
     }
 
     //передача имени студента в ProfileVC
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let profileVC = segue.destination as? ProfileViewController {
-            profileVC.profileNameLabelInformation = studentNameForProfileVC
-            profileVC.profileSurnameLabelInformation = studentSurnameForProfileVC
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let profileVC = segue.destination as? ProfileViewController {
+//            profileVC.profileNameLabelInformation = ProfileManager.shared.name
+//            profileVC.profileSurnameLabelInformation = ProfileManager.shared.surname
+//        }
+//    }
    
     }
 

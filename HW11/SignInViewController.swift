@@ -21,21 +21,21 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func signInButtonPressed(_ sender: Any) {
         //условия для перехода к другому экрану (при нажатии на кнопку)
         
-        let loginTF = loginTextField.text ?? ""
-        let passwordTF = passwordTextField.text ?? ""
+         //инициализация singleton, передача в него значения loginTF, passwordTF
+        ProfileManager.shared.login = loginTextField.text ?? ""
+        ProfileManager.shared.password = passwordTextField.text ?? ""
         
         let validator = Validator()
-        
-        if validator.isLoginCorrect(login: loginTF) == true && validator.isLoginContainsCorrectSymbols(login: loginTF) == true && validator.isPasswordCorrect(password: passwordTF) == true {
+        if validator.isLoginCorrect(login: ProfileManager.shared.login) == true && validator.isLoginContainsCorrectSymbols(login: ProfileManager.shared.login) == true && validator.isPasswordCorrect(password: ProfileManager.shared.password) == true {
             
              signButton.backgroundColor = UIColor.favoriteColor
              performSegue(withIdentifier: "fromSignToMain", sender: nil)
+            
         }
         else {
             validator.alertSending(self)
@@ -43,13 +43,13 @@ class SignInViewController: UIViewController {
     }
     
     //передача значения, введенного в loginTextField, в label другого viewcontrollerа
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let mainVC = segue.destination as? MainViewController {
-            let infToMainVC = loginTextField.text ?? ""
-            mainVC.loginInformation = "Welcome, \(infToMainVC)!"
-        }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let mainVC = segue.destination as? MainViewController {
+//            //let infToMainVC = loginTextField.text ?? ""
+//            mainVC.loginInformation = "Welcome, \(ProfileManager.shared.login)!"
+//        }
         
-    }
+//    }
 }
     //добавление property с моим любимым цветом
     extension UIColor {

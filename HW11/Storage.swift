@@ -12,7 +12,7 @@ class Storage: NSObject, UITableViewDataSource {
      
     var students: [Student] = []
     
-    override init() {
+     override init() {
     //записываем массив имен в массив students
         super.init()
         students = prepareArray()
@@ -45,7 +45,7 @@ class Storage: NSObject, UITableViewDataSource {
       
 }
 
-extension Storage {
+extension Storage  {
     
     //функция, переводящяя Name.txt в массив имен. [при вызове запишем массив в массив students]
     func prepareArray() -> [Student] {

@@ -7,15 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 class ProfileManager {
     
-    let login: String
-    let password: String
+    static let shared = ProfileManager()
+        var login: String = ""
+        var password: String = ""
+        var name = ""
+        var surname = ""
     
-    init(login: String, password: String) {
-        self.login = login
-        self.password = password
+    private init() {
     }
 }
 

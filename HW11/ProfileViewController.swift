@@ -14,13 +14,13 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileSurnameLabel: UILabel!
     @IBOutlet weak var studDescriptionLabel: UILabel!
     
-    var profileNameLabelInformation = ""
-    var profileSurnameLabelInformation = ""
+//    var profileNameLabelInformation = ""
+//    var profileSurnameLabelInformation = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileNameLabel.text = profileNameLabelInformation
-        profileSurnameLabel.text = profileSurnameLabelInformation
+        profileNameLabel.text = ProfileManager.shared.name
+        profileSurnameLabel.text = ProfileManager.shared.surname
         
     }
 }

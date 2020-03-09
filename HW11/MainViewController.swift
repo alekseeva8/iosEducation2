@@ -14,12 +14,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var classButton: UIButton!
     
-    var loginInformation = ""
+    //var loginInformation = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        welcomeLabel.text = loginInformation
+        welcomeLabel.text = "Welcome, \(ProfileManager.shared.login)!"
     }
     
     //unwind segue от экранов Profile и Students к Main экрану
