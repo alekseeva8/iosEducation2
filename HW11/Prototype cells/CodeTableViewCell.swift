@@ -9,17 +9,13 @@
 import UIKit
 
 class CodeTableViewCell: UITableViewCell {
-    
-    static let id = "CodeTableViewCell"
-    
+    static let idd = "CodeTableViewCell"
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
-    
     required init?(coder: NSCoder) {
      fatalError()
     }
-    
     // вызывается когда метод инициализируется из xib.
     override func awakeFromNib() {
         super.awakeFromNib()

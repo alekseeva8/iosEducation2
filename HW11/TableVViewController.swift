@@ -11,39 +11,20 @@ import UIKit
 let storage = Storage()
 var students = storage.students
 
-class TableVViewController: UIViewController, UITableViewDelegate {
-
+class TableVViewController: UIViewController {
 //    var studentNameForProfileVC = ""
 //    var studentSurnameForProfileVC = ""
-    
     @IBOutlet weak var tableView: UITableView!
-    
-    //метод говорит делегату, какой выбран пользователем ряд (нажатием на ряд пользователем). здесь можно модифицировать ряд
-    //здесь передаем значения имени и фамилии выбранного пользователем ряда в ProfileVC
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //tableView.deselectRow(at: indexPath, animated: true)
-        //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
-        ProfileManager.shared.name = students[indexPath.row].name
-        ProfileManager.shared.surname = students[indexPath.row].surname
-        
-        performSegue(withIdentifier: "profileVC" , sender: nil)
-    }
-    
     //обновляет данные таблицы, когда user вновь открывает таблицу
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-    
-
-    //MARK: ViewDidLoad
-    
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
        tableView.dataSource = storage
     }
-    
     //нажатие на кнопку Edit 
     @IBAction func editButtonTapped(_ sender: Any) {
         let tableViewEditingMode = tableView.isEditing
@@ -57,17 +38,23 @@ class TableVViewController: UIViewController, UITableViewDelegate {
 //            profileVC.profileSurnameLabelInformation = ProfileManager.shared.surname
 //        }
 //    }
-   
     }
 
-
-    
-    
-
-
-    
-
-    
-
-
-
+extension TableVViewController: UITableViewDelegate {
+       //метод говорит делегату, какой выбран пользователем ряд (нажатием на ряд пользователем).
+       //здесь можно модифицировать ряд
+       //здесь передаем значения имени и фамилии выбранного пользователем ряда в ProfileVC
+       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           //tableView.deselectRow(at: indexPath, animated: true)
+           //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
+           ProfileManager.shared.name = students[indexPath.row].name
+           ProfileManager.shared.surname = students[indexPath.row].surname
+        //загружаются разные стили профилей в зависимости от пола студента
+        switch students[indexPath.row].gender {
+        case .male:
+            performSegue(withIdentifier: "profile3VC", sender: nil)
+        case .female:
+            performSegue(withIdentifier: "profile2VC", sender: nil)
+       }
+}
+}
