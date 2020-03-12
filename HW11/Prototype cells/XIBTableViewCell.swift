@@ -9,13 +9,10 @@
 import UIKit
 
 class XIBTableViewCell: UITableViewCell {
-    
-    static let id = "XIBTableViewCell"
-    
+    static let idd = "XIBTableViewCell"
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -30,5 +27,4 @@ class XIBTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
