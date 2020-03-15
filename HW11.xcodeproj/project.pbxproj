@@ -27,6 +27,7 @@
 		F3D0F8E4241912A1000A9D0A /* Profile2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0F8E3241912A1000A9D0A /* Profile2ViewController.swift */; };
 		F3D0F8E62419188E000A9D0A /* Profile3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0F8E52419188E000A9D0A /* Profile3ViewController.swift */; };
 		F3D0F8E8241A13C4000A9D0A /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3D0F8E7241A13C4000A9D0A /* credentials.plist */; };
+		F3D0F8EC241BEB8E000A9D0A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D0F8EB241BEB8E000A9D0A /* ViewController.xib */; };
 		F3FABC9C23FFE14100CD77B2 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FABC9B23FFE14100CD77B2 /* ProfileManager.swift */; };
 		F3FABC9E23FFE1F600CD77B2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FABC9D23FFE1F600CD77B2 /* Validator.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		F3D0F8E3241912A1000A9D0A /* Profile2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile2ViewController.swift; sourceTree = "<group>"; };
 		F3D0F8E52419188E000A9D0A /* Profile3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile3ViewController.swift; sourceTree = "<group>"; };
 		F3D0F8E7241A13C4000A9D0A /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../Downloads/credentials.plist; sourceTree = "<group>"; };
+		F3D0F8EB241BEB8E000A9D0A /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		F3FABC9B23FFE14100CD77B2 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		F3FABC9D23FFE1F600CD77B2 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 				F36F63A423FA771900FEB355 /* AppDelegate.swift */,
 				F36F63A623FA771900FEB355 /* SceneDelegate.swift */,
 				F36F63A823FA771900FEB355 /* ViewController.swift */,
+				F3D0F8EB241BEB8E000A9D0A /* ViewController.xib */,
 				F36F63AA23FA771900FEB355 /* Main.storyboard */,
 				F36F63B823FA790D00FEB355 /* SignInViewController.swift */,
 				F36F63BA23FA83EC00FEB355 /* MainViewController.swift */,
@@ -206,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D0F8EC241BEB8E000A9D0A /* ViewController.xib in Resources */,
 				F36F63B123FA771A00FEB355 /* LaunchScreen.storyboard in Resources */,
 				F3D0F8E8241A13C4000A9D0A /* credentials.plist in Resources */,
 				F34C1E0223FC4D6C00094DA0 /* Names.txt in Resources */,

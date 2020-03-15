@@ -233,6 +233,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Kw5-5g-CXn"/>
                     <connections>
+                        <outlet property="imageOfProfile" destination="yDb-mZ-bbL" id="jGH-hl-O7n"/>
                         <outlet property="profileNameLabel" destination="563-Wh-zBS" id="Lxf-Es-ZMU"/>
                         <outlet property="profileSurnameLabel" destination="PeJ-N4-TB7" id="D8M-p5-tbY"/>
                         <outlet property="studDescriptionLabel" destination="Ymj-3J-pkv" id="D9z-YA-H7b"/>
@@ -554,6 +555,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="74r-N4-zaV"/>
                     <connections>
+                        <outlet property="imageOfProfile2" destination="ofo-NO-2qJ" id="B3D-uu-uTE"/>
                         <outlet property="profileNameLabel" destination="9DG-9o-O6h" id="5rq-i4-A8s"/>
                         <outlet property="profileSurnameLabel" destination="AmQ-fZ-QPl" id="n8G-vd-ngE"/>
                     </connections>
