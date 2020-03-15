@@ -13,11 +13,26 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileSurnameLabel: UILabel!
     @IBOutlet weak var studDescriptionLabel: UILabel!
     @IBOutlet weak var imageOfProfile: UIImageView!
-    //    var profileNameLabelInformation = ""
-//    var profileSurnameLabelInformation = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageOfProfile.layer.borderWidth = 1
+        imageOfProfile.layer.borderColor = UIColor.black.cgColor
         profileNameLabel.text = ProfileManager.shared.name
         profileSurnameLabel.text = ProfileManager.shared.surname
     }
-}
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateToCircle()
+    }
+    func animateToCircle() {
+//        UIImageView.animate(withDuration: 2) { [weak self] in
+//            guard let self = self else {return}
+//            guard let view = self.imageOfProfile else {return}
+//            view.layer.cornerRadius = view.bounds.width/2
+        UIImageView.animate(withDuration: 2) {
+            guard let imageView = self.imageOfProfile else {return}
+            imageView.layer.cornerRadius = imageView.bounds.width/2
+        }
+        }
+    }

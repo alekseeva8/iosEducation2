@@ -171,8 +171,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-profile-pngrepo-com" translatesAutoresizingMaskIntoConstraints="NO" id="yDb-mZ-bbL">
-                                        <rect key="frame" x="68" y="58" width="240" height="200"/>
+                                        <rect key="frame" x="87.5" y="58" width="200" height="200"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="6fe-9q-L94"/>
                                             <constraint firstAttribute="height" constant="200" id="Tqs-nC-hqD"/>
                                         </constraints>
                                     </imageView>
@@ -202,6 +203,7 @@
                                     <constraint firstItem="NiR-Ct-6Sd" firstAttribute="top" secondItem="qlR-nL-HCm" secondAttribute="top" constant="8" id="0l4-3d-bAH"/>
                                     <constraint firstItem="NiR-Ct-6Sd" firstAttribute="leading" secondItem="qlR-nL-HCm" secondAttribute="leading" constant="16" id="2rM-Ro-ntM"/>
                                     <constraint firstItem="Ymj-3J-pkv" firstAttribute="trailing" secondItem="qlR-nL-HCm" secondAttribute="trailing" constant="8" id="49O-O5-VGE"/>
+                                    <constraint firstItem="yDb-mZ-bbL" firstAttribute="centerX" secondItem="koI-vS-QI0" secondAttribute="centerX" id="4XN-LN-FcN"/>
                                     <constraint firstItem="PeJ-N4-TB7" firstAttribute="top" secondItem="563-Wh-zBS" secondAttribute="bottom" constant="8" id="7eE-TA-bVa"/>
                                     <constraint firstItem="Ymj-3J-pkv" firstAttribute="top" secondItem="PeJ-N4-TB7" secondAttribute="bottom" constant="8" id="8lG-rk-ckF"/>
                                     <constraint firstItem="qlR-nL-HCm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NiR-Ct-6Sd" secondAttribute="trailing" symbolic="YES" id="C3X-63-lNC"/>
@@ -210,12 +212,10 @@
                                     <constraint firstItem="PeJ-N4-TB7" firstAttribute="centerX" secondItem="qlR-nL-HCm" secondAttribute="centerX" id="IrF-Tt-lRd"/>
                                     <constraint firstItem="qlR-nL-HCm" firstAttribute="bottom" secondItem="Ymj-3J-pkv" secondAttribute="bottom" constant="7" id="TJE-kZ-qa4"/>
                                     <constraint firstItem="qlR-nL-HCm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="563-Wh-zBS" secondAttribute="trailing" symbolic="YES" id="UhT-f2-wUy"/>
-                                    <constraint firstItem="yDb-mZ-bbL" firstAttribute="leading" secondItem="qlR-nL-HCm" secondAttribute="leading" constant="68" id="Upf-mi-pQh"/>
                                     <constraint firstItem="563-Wh-zBS" firstAttribute="leading" secondItem="PeJ-N4-TB7" secondAttribute="leading" id="cKA-ed-Tri"/>
                                     <constraint firstItem="yDb-mZ-bbL" firstAttribute="top" secondItem="qlR-nL-HCm" secondAttribute="top" constant="58" id="f10-lP-W3X"/>
                                     <constraint firstItem="Ymj-3J-pkv" firstAttribute="leading" secondItem="qlR-nL-HCm" secondAttribute="leading" constant="8" id="ghY-WX-B6L"/>
                                     <constraint firstItem="yDb-mZ-bbL" firstAttribute="top" secondItem="NiR-Ct-6Sd" secondAttribute="bottom" constant="14" id="u5f-tY-nTg"/>
-                                    <constraint firstItem="qlR-nL-HCm" firstAttribute="trailing" secondItem="yDb-mZ-bbL" secondAttribute="trailing" constant="67" id="xCR-Eg-ihy"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="qlR-nL-HCm"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Q9n-yG-e4X"/>
