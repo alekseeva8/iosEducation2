@@ -15,7 +15,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var imageOfProfile: UIImageView!
     //var button = UIButton(frame: CGRect(x: 100, y: 100, width: 130, height: 35))
     @IBOutlet weak var button: UIButton!
-     var trailing: NSLayoutConstraint?
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    //var trailing: NSLayoutConstraint?
     override func viewDidLoad() {
         super.viewDidLoad()
         imageOfProfile.layer.borderWidth = 1
@@ -25,15 +26,15 @@ class ProfileViewController: UIViewController {
         //кнопка
         button.backgroundColor = .yellow
         //self.view.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.widthAnchor.constraint(equalToConstant: 130).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        trailing = view.trailingAnchor.constraint(equalTo: button.trailingAnchor)
-        trailing?.isActive = true
-        trailing?.constant = 8
-        let top = button.topAnchor.constraint(equalTo: view.topAnchor)
-        top.isActive = true
-        top.constant = 20
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.widthAnchor.constraint(equalToConstant: 130).isActive = true
+//        button.heightAnchor.constraint(equalToConstant: 35).isActive = true
+//        trailing = view.trailingAnchor.constraint(equalTo: button.trailingAnchor)
+//        trailing?.isActive = true
+//        trailing?.constant = 8
+//        let top = button.topAnchor.constraint(equalTo: view.topAnchor)
+//        top.isActive = true
+//        top.constant = 20
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -51,28 +52,28 @@ class ProfileViewController: UIViewController {
     }
     //преобразование картинки в круглую
     func animateToCircle() {
-//        UIImageView.animate(withDuration: 2) { [weak self] in
-//            guard let self = self else {return}
-//            guard let view = self.imageOfProfile else {return}
-//            view.layer.cornerRadius = view.bounds.width/2
-        UIImageView.animate(withDuration: 2) {
-            guard let imageView = self.imageOfProfile else {return}
-            imageView.layer.cornerRadius = imageView.bounds.width/2
+        UIImageView.animate(withDuration: 2) { [weak self] in
+            guard let self = self else {return}
+            guard let view = self.imageOfProfile else {return}
+            view.layer.cornerRadius = view.bounds.width/2
         }
         }
     //функция: прямоугольная кнопка -> квадратная кнопка + граница
     func animateButton() {
-        UIButton.animate(withDuration: 4) {
+        UIButton.animate(withDuration: 4) { [weak self] in
+            guard let self = self else {return}
             guard let button = self.button else {return}
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.black.cgColor
             //button.widthAnchor.constraint(equalToConstant: 130).isActive = false
-            button.widthAnchor.constraint(equalToConstant: 35).isActive = true
+            //button.widthAnchor.constraint(equalToConstant: 35).isActive = true
+            self.widthConstraint.constant = 35
         }
     }
     //функция: квадратная кнопка -> круглая кнопка + цвет меняетяся
         func animateButton2() {
-        UIButton.animate(withDuration: 2) {
+        UIButton.animate(withDuration: 2) { [weak self] in
+            guard let self = self else {return}
             guard let button = self.button else {return}
             button.layer.cornerRadius = self.button.bounds.width/2
             button.backgroundColor = .green
@@ -84,9 +85,11 @@ class ProfileViewController: UIViewController {
 //        trailing?.constant = -100
 //        UIView.animate(withDuration: 2, animations: {self.view.layoutIfNeeded()})
         //вар2 - использование transform property
-        UIView.animate(withDuration: 2) {
+        UIView.animate(withDuration: 2) { [weak self] in
+            guard let self = self else {return}
             let translateTransform = CGAffineTransform(translationX: 200, y: 0)
             self.button.transform = translateTransform
+            
         }
     }
     }
