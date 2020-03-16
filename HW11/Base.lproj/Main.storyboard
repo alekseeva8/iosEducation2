@@ -198,6 +198,15 @@
                                             <segue destination="6XR-NB-Yqm" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="58T-IF-NYs"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdT-is-WdA">
+                                        <rect key="frame" x="322" y="13" width="30" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Ok"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="dAt-BV-dmC" eventType="touchUpInside" id="ZHZ-T7-eof"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="NiR-Ct-6Sd" firstAttribute="top" secondItem="qlR-nL-HCm" secondAttribute="top" constant="8" id="0l4-3d-bAH"/>
@@ -233,6 +242,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Kw5-5g-CXn"/>
                     <connections>
+                        <outlet property="button" destination="CdT-is-WdA" id="TGV-1u-D3F"/>
                         <outlet property="imageOfProfile" destination="yDb-mZ-bbL" id="jGH-hl-O7n"/>
                         <outlet property="profileNameLabel" destination="563-Wh-zBS" id="Lxf-Es-ZMU"/>
                         <outlet property="profileSurnameLabel" destination="PeJ-N4-TB7" id="D8M-p5-tbY"/>
