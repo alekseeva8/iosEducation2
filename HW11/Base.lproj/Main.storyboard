@@ -171,8 +171,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-profile-pngrepo-com" translatesAutoresizingMaskIntoConstraints="NO" id="yDb-mZ-bbL">
-                                        <rect key="frame" x="68" y="58" width="240" height="200"/>
+                                        <rect key="frame" x="87.5" y="58" width="200" height="200"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="6fe-9q-L94"/>
                                             <constraint firstAttribute="height" constant="200" id="Tqs-nC-hqD"/>
                                         </constraints>
                                     </imageView>
@@ -197,11 +198,24 @@
                                             <segue destination="6XR-NB-Yqm" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="58T-IF-NYs"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdT-is-WdA">
+                                        <rect key="frame" x="237" y="8" width="130" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="EWa-II-poJ"/>
+                                            <constraint firstAttribute="height" constant="35" id="iem-wA-43E"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Ok"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="dAt-BV-dmC" eventType="touchUpInside" id="ZHZ-T7-eof"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="NiR-Ct-6Sd" firstAttribute="top" secondItem="qlR-nL-HCm" secondAttribute="top" constant="8" id="0l4-3d-bAH"/>
                                     <constraint firstItem="NiR-Ct-6Sd" firstAttribute="leading" secondItem="qlR-nL-HCm" secondAttribute="leading" constant="16" id="2rM-Ro-ntM"/>
                                     <constraint firstItem="Ymj-3J-pkv" firstAttribute="trailing" secondItem="qlR-nL-HCm" secondAttribute="trailing" constant="8" id="49O-O5-VGE"/>
+                                    <constraint firstItem="yDb-mZ-bbL" firstAttribute="centerX" secondItem="koI-vS-QI0" secondAttribute="centerX" id="4XN-LN-FcN"/>
                                     <constraint firstItem="PeJ-N4-TB7" firstAttribute="top" secondItem="563-Wh-zBS" secondAttribute="bottom" constant="8" id="7eE-TA-bVa"/>
                                     <constraint firstItem="Ymj-3J-pkv" firstAttribute="top" secondItem="PeJ-N4-TB7" secondAttribute="bottom" constant="8" id="8lG-rk-ckF"/>
                                     <constraint firstItem="qlR-nL-HCm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NiR-Ct-6Sd" secondAttribute="trailing" symbolic="YES" id="C3X-63-lNC"/>
@@ -210,12 +224,12 @@
                                     <constraint firstItem="PeJ-N4-TB7" firstAttribute="centerX" secondItem="qlR-nL-HCm" secondAttribute="centerX" id="IrF-Tt-lRd"/>
                                     <constraint firstItem="qlR-nL-HCm" firstAttribute="bottom" secondItem="Ymj-3J-pkv" secondAttribute="bottom" constant="7" id="TJE-kZ-qa4"/>
                                     <constraint firstItem="qlR-nL-HCm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="563-Wh-zBS" secondAttribute="trailing" symbolic="YES" id="UhT-f2-wUy"/>
-                                    <constraint firstItem="yDb-mZ-bbL" firstAttribute="leading" secondItem="qlR-nL-HCm" secondAttribute="leading" constant="68" id="Upf-mi-pQh"/>
                                     <constraint firstItem="563-Wh-zBS" firstAttribute="leading" secondItem="PeJ-N4-TB7" secondAttribute="leading" id="cKA-ed-Tri"/>
                                     <constraint firstItem="yDb-mZ-bbL" firstAttribute="top" secondItem="qlR-nL-HCm" secondAttribute="top" constant="58" id="f10-lP-W3X"/>
                                     <constraint firstItem="Ymj-3J-pkv" firstAttribute="leading" secondItem="qlR-nL-HCm" secondAttribute="leading" constant="8" id="ghY-WX-B6L"/>
+                                    <constraint firstItem="CdT-is-WdA" firstAttribute="top" secondItem="qlR-nL-HCm" secondAttribute="top" constant="8" id="jh0-9O-Ajo"/>
+                                    <constraint firstItem="qlR-nL-HCm" firstAttribute="trailing" secondItem="CdT-is-WdA" secondAttribute="trailing" constant="8" id="p83-eg-3EA"/>
                                     <constraint firstItem="yDb-mZ-bbL" firstAttribute="top" secondItem="NiR-Ct-6Sd" secondAttribute="bottom" constant="14" id="u5f-tY-nTg"/>
-                                    <constraint firstItem="qlR-nL-HCm" firstAttribute="trailing" secondItem="yDb-mZ-bbL" secondAttribute="trailing" constant="67" id="xCR-Eg-ihy"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="qlR-nL-HCm"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Q9n-yG-e4X"/>
@@ -233,10 +247,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Kw5-5g-CXn"/>
                     <connections>
+                        <outlet property="button" destination="CdT-is-WdA" id="TGV-1u-D3F"/>
                         <outlet property="imageOfProfile" destination="yDb-mZ-bbL" id="jGH-hl-O7n"/>
                         <outlet property="profileNameLabel" destination="563-Wh-zBS" id="Lxf-Es-ZMU"/>
                         <outlet property="profileSurnameLabel" destination="PeJ-N4-TB7" id="D8M-p5-tbY"/>
                         <outlet property="studDescriptionLabel" destination="Ymj-3J-pkv" id="D9z-YA-H7b"/>
+                        <outlet property="widthConstraint" destination="EWa-II-poJ" id="lbi-jD-Tyd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N17-kh-8OR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -482,7 +498,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2394729" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-NO-2qJ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-profile-pngrepo-com-4" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-NO-2qJ">
                                         <rect key="frame" x="8" y="64" width="200" height="180"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="bwa-GE-zM7"/>
@@ -490,16 +506,16 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Oa-j9-1bR" userLabel="To Main Screen Button">
-                                        <rect key="frame" x="16" y="8" width="133" height="36"/>
+                                        <rect key="frame" x="16" y="8" width="140" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="To Main Screen">
+                                        <state key="normal" title="To Students List">
                                             <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                         </state>
                                         <connections>
                                             <action selector="unwindToMain:" destination="tri-J2-bAk" eventType="touchUpInside" id="Uz5-Lq-SVd"/>
                                             <action selector="unwindToMain:" destination="6XR-NB-Yqm" eventType="touchUpInside" id="pb7-Qn-MYp"/>
-                                            <segue destination="tri-J2-bAk" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="0cZ-6b-7tV"/>
+                                            <segue destination="tri-J2-bAk" kind="unwind" unwindAction="unwindToStudentsListWithUnwindSegue:" id="0cZ-6b-7tV"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hVD-hf-V4g">
@@ -583,23 +599,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="347715-admin" translatesAutoresizingMaskIntoConstraints="NO" id="r41-Yz-Po9">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-profile-pngrepo-com-3" translatesAutoresizingMaskIntoConstraints="NO" id="r41-Yz-Po9">
                                         <rect key="frame" x="0.0" y="58" width="375" height="220"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="220" id="Apm-bD-Acg"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07y-dc-H3Y" userLabel="To Main Screen Button">
-                                        <rect key="frame" x="16" y="8" width="133" height="42"/>
+                                        <rect key="frame" x="16" y="8" width="140" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="To Main Screen">
+                                        <state key="normal" title="To Students List">
                                             <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                         </state>
                                         <connections>
                                             <action selector="unwindToMain:" destination="44x-l4-foR" eventType="touchUpInside" id="5gk-kB-ZYY"/>
                                             <action selector="unwindToMain:" destination="6XR-NB-Yqm" eventType="touchUpInside" id="V1n-tb-jsq"/>
-                                            <segue destination="44x-l4-foR" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="ahR-1X-TSC"/>
+                                            <segue destination="44x-l4-foR" kind="unwind" unwindAction="unwindToStudentsListWithUnwindSegue:" id="ahR-1X-TSC"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HK7-Dx-10s" userLabel="surnameLabel">
@@ -669,8 +685,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2394729" width="2456" height="2456"/>
-        <image name="347715-admin" width="1000" height="586.5"/>
         <image name="user-profile-pngrepo-com" width="256" height="256"/>
         <image name="user-profile-pngrepo-com-3" width="256" height="256"/>
         <image name="user-profile-pngrepo-com-4" width="256" height="256"/>

@@ -38,6 +38,7 @@ class TableVViewController: UIViewController {
 //            profileVC.profileSurnameLabelInformation = ProfileManager.shared.surname
 //        }
 //    }
+     @IBAction func unwindToStudentsList(unwindSegue: UIStoryboardSegue) {}
     }
 
 extension TableVViewController: UITableViewDelegate {
