@@ -89,7 +89,6 @@ class ProfileViewController: UIViewController {
             guard let self = self else {return}
             let translateTransform = CGAffineTransform(translationX: 200, y: 0)
             self.button.transform = translateTransform
-            
         }
     }
     }

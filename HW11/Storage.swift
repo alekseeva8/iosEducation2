@@ -10,8 +10,8 @@ import UIKit
 
 class Storage: NSObject, UITableViewDataSource {
     var students: [Student] = []
+     // в инициализатор экземпляра класса записываем массив имен в массив students
      override init() {
-    //записываем массив имен в массив students
         super.init()
         students = prepareArray()
     }
@@ -80,9 +80,4 @@ extension Storage {
            tableView.reloadData()
            }
        }
-        //определяет стиль редактирования для ряда. здесь функция убирает круглый значек удаления
-    //    func tableView(_ tableView: UITableView,
-    //editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-    //        return .none
-    //    }
    }

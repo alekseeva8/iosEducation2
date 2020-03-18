@@ -12,8 +12,6 @@ let storage = Storage()
 var students = storage.students
 
 class TableVViewController: UIViewController {
-//    var studentNameForProfileVC = ""
-//    var studentSurnameForProfileVC = ""
     @IBOutlet weak var tableView: UITableView!
     //обновляет данные таблицы, когда user вновь открывает таблицу
     override func viewWillAppear(_ animated: Bool) {
@@ -31,13 +29,6 @@ class TableVViewController: UIViewController {
         tableView.setEditing(!tableViewEditingMode, animated: true)
     }
 
-    //передача имени студента в ProfileVC
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let profileVC = segue.destination as? ProfileViewController {
-//            profileVC.profileNameLabelInformation = ProfileManager.shared.name
-//            profileVC.profileSurnameLabelInformation = ProfileManager.shared.surname
-//        }
-//    }
      @IBAction func unwindToStudentsList(unwindSegue: UIStoryboardSegue) {}
     }
 
