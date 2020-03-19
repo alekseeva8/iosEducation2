@@ -7,18 +7,25 @@
 //
 
 import Foundation
+import UIKit
 
 struct Student {
     var name: String
     var surname: String
     var gender: Gender
+    var image: UIImage
+    
+//    enum image {
+//        case 
+//    }
 
     enum Gender {
     case male, female
 }
-    init(name: String, surname: String, gender: Gender) {
+    init(name: String, surname: String, gender: Gender, image: UIImage) {
         self.name = name
         self.surname = surname
         self.gender = gender
+        self.image = image
     }
 }

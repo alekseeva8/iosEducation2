@@ -13,6 +13,9 @@
 		F34C1E0423FC59BB00094DA0 /* CodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C1E0323FC59BB00094DA0 /* CodeTableViewCell.swift */; };
 		F34C1E0723FC5C9E00094DA0 /* XIBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C1E0523FC5C9E00094DA0 /* XIBTableViewCell.swift */; };
 		F34C1E0823FC5C9E00094DA0 /* XIBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F34C1E0623FC5C9E00094DA0 /* XIBTableViewCell.xib */; };
+		F3547C3B242254CD00820800 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3547C3A242254CD00820800 /* CollectionViewController.swift */; };
+		F3547C3D2422720E00820800 /* StudentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3547C3C2422720E00820800 /* StudentCollectionViewCell.swift */; };
+		F3547C4724235B3200820800 /* Storage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3547C4624235B3200820800 /* Storage2.swift */; };
 		F35C834D23FE630E005D69BC /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C834C23FE630E005D69BC /* Storage.swift */; };
 		F36F63A523FA771900FEB355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F63A423FA771900FEB355 /* AppDelegate.swift */; };
 		F36F63A723FA771900FEB355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F63A623FA771900FEB355 /* SceneDelegate.swift */; };
@@ -41,6 +44,9 @@
 		F34C1E0323FC59BB00094DA0 /* CodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTableViewCell.swift; sourceTree = "<group>"; };
 		F34C1E0523FC5C9E00094DA0 /* XIBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBTableViewCell.swift; sourceTree = "<group>"; };
 		F34C1E0623FC5C9E00094DA0 /* XIBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XIBTableViewCell.xib; sourceTree = "<group>"; };
+		F3547C3A242254CD00820800 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		F3547C3C2422720E00820800 /* StudentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCollectionViewCell.swift; sourceTree = "<group>"; };
+		F3547C4624235B3200820800 /* Storage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Storage2.swift; path = /Users/elena/Desktop/iosEducation2/HW11/CollectionView/Storage2.swift; sourceTree = "<absolute>"; };
 		F35C834C23FE630E005D69BC /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F36F63A123FA771900FEB355 /* HW11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36F63A423FA771900FEB355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +107,36 @@
 			path = "Prototype cells";
 			sourceTree = "<group>";
 		};
+		F3547C442422956600820800 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				F35C834C23FE630E005D69BC /* Storage.swift */,
+				F36F63BC23FA929C00FEB355 /* TableVViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		F3547C45242295A600820800 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F3547C3C2422720E00820800 /* StudentCollectionViewCell.swift */,
+				F3547C3A242254CD00820800 /* CollectionViewController.swift */,
+				F3547C4624235B3200820800 /* Storage2.swift */,
+				F3547C4824235B9E00820800 /* Profiles */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		F3547C4824235B9E00820800 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				F36F63BE23FAAF6F00FEB355 /* ProfileViewController.swift */,
+				F3D0F8E3241912A1000A9D0A /* Profile2ViewController.swift */,
+				F3D0F8E52419188E000A9D0A /* Profile3ViewController.swift */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
 		F36F639823FA771900FEB355 = {
 			isa = PBXGroup;
 			children = (
@@ -129,14 +165,11 @@
 				F36F63AA23FA771900FEB355 /* Main.storyboard */,
 				F36F63B823FA790D00FEB355 /* SignInViewController.swift */,
 				F36F63BA23FA83EC00FEB355 /* MainViewController.swift */,
-				F36F63BC23FA929C00FEB355 /* TableVViewController.swift */,
-				F36F63BE23FAAF6F00FEB355 /* ProfileViewController.swift */,
-				F3D0F8E3241912A1000A9D0A /* Profile2ViewController.swift */,
-				F3D0F8E52419188E000A9D0A /* Profile3ViewController.swift */,
+				F3547C45242295A600820800 /* CollectionView */,
 				F31495E8240D0AFD005E7865 /* Student.swift */,
-				F35C834C23FE630E005D69BC /* Storage.swift */,
 				F3FABC9D23FFE1F600CD77B2 /* Validator.swift */,
 				F3FABC9B23FFE14100CD77B2 /* ProfileManager.swift */,
+				F3547C442422956600820800 /* TableView */,
 				F31495E7240CFF75005E7865 /* Prototype cells */,
 				F36F63AD23FA771A00FEB355 /* Assets.xcassets */,
 				F36F63AF23FA771A00FEB355 /* LaunchScreen.storyboard */,
@@ -302,10 +335,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3547C4724235B3200820800 /* Storage2.swift in Sources */,
 				F34C1E0423FC59BB00094DA0 /* CodeTableViewCell.swift in Sources */,
 				F35C834D23FE630E005D69BC /* Storage.swift in Sources */,
 				F36F63BD23FA929C00FEB355 /* TableVViewController.swift in Sources */,
 				F34C1E0723FC5C9E00094DA0 /* XIBTableViewCell.swift in Sources */,
+				F3547C3B242254CD00820800 /* CollectionViewController.swift in Sources */,
 				F3FABC9E23FFE1F600CD77B2 /* Validator.swift in Sources */,
 				F36F63B923FA790D00FEB355 /* SignInViewController.swift in Sources */,
 				F36F63A923FA771900FEB355 /* ViewController.swift in Sources */,
@@ -316,6 +351,7 @@
 				F3D0F8E4241912A1000A9D0A /* Profile2ViewController.swift in Sources */,
 				F36F63A723FA771900FEB355 /* SceneDelegate.swift in Sources */,
 				F3D0F8E62419188E000A9D0A /* Profile3ViewController.swift in Sources */,
+				F3547C3D2422720E00820800 /* StudentCollectionViewCell.swift in Sources */,
 				F36F63BB23FA83EC00FEB355 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

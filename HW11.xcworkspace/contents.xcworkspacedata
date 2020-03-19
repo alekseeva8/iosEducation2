@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/elena/Desktop/iosEducation2/HW11/CollectionView/Storage2.swift">
+   </FileRef>
+   <FileRef
       location = "group:HW11.xcodeproj">
    </FileRef>
    <FileRef
