@@ -37,7 +37,6 @@ class StudentCollectionViewCell: UICollectionViewCell {
         surnameLabel.translatesAutoresizingMaskIntoConstraints = false
         studentImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         studentImageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        //studentImageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         studentImageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         studentImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1/2).isActive = true
         nameLabel.topAnchor.constraint(equalTo: studentImageView.bottomAnchor, constant: 20).isActive = true

@@ -8,8 +8,8 @@
 
 import UIKit
 
-let ds = DataSource()
-var students2 = ds.students
+let dsOfCV = DataSource()
+var students2 = dsOfCV.students
 
 class CollectionViewController: UIViewController {
     var collectionView: UICollectionView
@@ -22,12 +22,12 @@ class CollectionViewController: UIViewController {
         layout.minimumLineSpacing = 10
         self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         super.init(coder: coder)
-    collectionView.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: StudentCollectionViewCell.reuseID)
+        collectionView.register(StudentCollectionViewCell.self,forCellWithReuseIdentifier: StudentCollectionViewCell.reuseID)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
-        collectionView.dataSource = ds
+        collectionView.dataSource = dsOfCV
         collectionView.delegate = self
         collectionView.backgroundColor = .white
         collectionView.showsHorizontalScrollIndicator = false
@@ -38,6 +38,8 @@ class CollectionViewController: UIViewController {
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: labelStudents.bottomAnchor, constant: 8).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        //collectionView.heightAnchor.constraint(lessThanOrEqualToConstant: 350).isActive = true
+        //collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
     }
          @IBAction func unwindToStudentsList(unwindSegue: UIStoryboardSegue) {}
 }

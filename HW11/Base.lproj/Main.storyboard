@@ -39,7 +39,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cC2-1Y-6pG" userLabel="signInButton">
                                 <rect key="frame" x="152.5" y="427" width="70" height="36"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91349805480000001" green="1" blue="0.7517845313" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="SIGN IN">
                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="0.95725195380000005" blue="0.98747636080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kFh-oO-AOq" secondAttribute="trailing" constant="90" id="1XE-QC-HTd"/>
                             <constraint firstItem="WZ7-rk-xR9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="BuN-yr-q2P"/>
@@ -98,16 +98,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="TwE-Xc-G8R">
-                                <rect key="frame" x="154.5" y="235.5" width="66" height="240"/>
+                                <rect key="frame" x="154.5" y="212" width="66.5" height="243.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SO-F8-j9d" userLabel="welcomeLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="66" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" red="0.28538202930000001" green="0.7321392283" blue="0.32191846549999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rp-0a-MhU" userLabel="profileButton">
-                                        <rect key="frame" x="0.0" y="94" width="66" height="41"/>
+                                        <rect key="frame" x="0.0" y="97.5" width="66.5" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Profile"/>
                                         <connections>
@@ -115,7 +115,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwn-Sd-yN5" userLabel="classButton">
-                                        <rect key="frame" x="0.0" y="199" width="66" height="41"/>
+                                        <rect key="frame" x="0.0" y="202.5" width="66.5" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Class"/>
                                         <connections>
@@ -125,7 +125,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="0.95725195380000005" blue="0.98747636080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="TwE-Xc-G8R" firstAttribute="centerY" secondItem="V4g-2T-p1v" secondAttribute="centerY" id="0FM-do-95d"/>
                             <constraint firstItem="TwE-Xc-G8R" firstAttribute="centerX" secondItem="V4g-2T-p1v" secondAttribute="centerX" id="l6J-9L-92f"/>
@@ -154,7 +154,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koI-vS-QI0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymj-3J-pkv">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymj-3J-pkv" userLabel="Text">
                                         <rect key="frame" x="8" y="376" width="375" height="692.5"/>
                                         <string key="text">Вот самый лучший его портрет, какой мне после удалось нарисовать. Но на моем рисунке он, конечно, далеко не так хорош, как был на самом деле. Это не моя вина. Когда мне было шесть лет, взрослые внушили мне, что художника из меня не выйдет, и я ничего не научился рисовать, кроме удавов - снаружи и изнутри. Итак, я во все глаза смотрел на это необычайное явление. Не забудьте, я находился за тысячи миль от человеческого жилья. А между тем ничуть не похоже было, чтобы этот малыш заблудился, или до смерти устал и напуган, или умирает от голода и жажды. По его виду никак нельзя было сказать, что это ребенок, потерявшийся в необитаемой пустыне, вдалеке от всякого жилья. Все это было так таинственно и непостижимо, что я не посмел отказаться. Хоть и нелепо это было здесь, в пустыне, на волосок от смерти, я все-таки достал из кармана лист бумаги и вечное перо. Но тут же вспомнил, что учился-то я больше географии, истории, арифметике и правописанию, - и сказал малышу (немножко даже сердито сказал), что не умею рисовать. </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -162,7 +162,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeJ-N4-TB7" userLabel="surnameLabel">
-                                        <rect key="frame" x="137" y="336" width="101" height="32"/>
+                                        <rect key="frame" x="141" y="336" width="101" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="e3X-Ba-DyG"/>
                                         </constraints>
@@ -178,7 +178,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="563-Wh-zBS" userLabel="nameLabel">
-                                        <rect key="frame" x="137" y="296" width="67" height="32"/>
+                                        <rect key="frame" x="141" y="296" width="67" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="pOC-iL-q3I"/>
                                         </constraints>
@@ -199,7 +199,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdT-is-WdA">
-                                        <rect key="frame" x="237" y="8" width="130" height="35"/>
+                                        <rect key="frame" x="245" y="8" width="130" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="EWa-II-poJ"/>
                                             <constraint firstAttribute="height" constant="35" id="iem-wA-43E"/>
@@ -211,10 +211,11 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="0.95725195380000005" blue="0.98747636080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="NiR-Ct-6Sd" firstAttribute="top" secondItem="qlR-nL-HCm" secondAttribute="top" constant="8" id="0l4-3d-bAH"/>
                                     <constraint firstItem="NiR-Ct-6Sd" firstAttribute="leading" secondItem="qlR-nL-HCm" secondAttribute="leading" constant="16" id="2rM-Ro-ntM"/>
-                                    <constraint firstItem="Ymj-3J-pkv" firstAttribute="trailing" secondItem="qlR-nL-HCm" secondAttribute="trailing" constant="8" id="49O-O5-VGE"/>
+                                    <constraint firstItem="Ymj-3J-pkv" firstAttribute="trailing" secondItem="qlR-nL-HCm" secondAttribute="trailing" id="49O-O5-VGE"/>
                                     <constraint firstItem="yDb-mZ-bbL" firstAttribute="centerX" secondItem="koI-vS-QI0" secondAttribute="centerX" id="4XN-LN-FcN"/>
                                     <constraint firstItem="PeJ-N4-TB7" firstAttribute="top" secondItem="563-Wh-zBS" secondAttribute="bottom" constant="8" id="7eE-TA-bVa"/>
                                     <constraint firstItem="Ymj-3J-pkv" firstAttribute="top" secondItem="PeJ-N4-TB7" secondAttribute="bottom" constant="8" id="8lG-rk-ckF"/>
@@ -240,7 +241,7 @@
                             <constraint firstItem="Ymj-3J-pkv" firstAttribute="width" secondItem="Stz-7p-5eT" secondAttribute="width" id="LFc-49-lcb"/>
                             <constraint firstItem="koI-vS-QI0" firstAttribute="trailing" secondItem="4o6-vs-WDj" secondAttribute="trailing" id="d3h-wR-hdx"/>
                             <constraint firstItem="koI-vS-QI0" firstAttribute="leading" secondItem="4o6-vs-WDj" secondAttribute="leading" id="fRc-Pe-j9l"/>
-                            <constraint firstItem="koI-vS-QI0" firstAttribute="top" secondItem="4o6-vs-WDj" secondAttribute="top" id="px2-bL-s0B"/>
+                            <constraint firstItem="koI-vS-QI0" firstAttribute="top" secondItem="Stz-7p-5eT" secondAttribute="top" id="px2-bL-s0B"/>
                             <constraint firstAttribute="bottom" secondItem="koI-vS-QI0" secondAttribute="bottom" id="sGQ-ot-UAF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4o6-vs-WDj"/>
@@ -281,20 +282,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Students" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOe-fx-jbh">
-                                <rect key="frame" x="40" y="84" width="295" height="38.5"/>
+                                <rect key="frame" x="40" y="64" width="295" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.28538202930000001" green="0.7321392283" blue="0.32191846549999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="0.95725195380000005" blue="0.98747636080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="JUc-4l-zkO" firstAttribute="top" secondItem="VUV-Wl-rEr" secondAttribute="top" constant="8" id="4Ic-Bb-sRF"/>
                             <constraint firstItem="VUV-Wl-rEr" firstAttribute="trailing" secondItem="SOe-fx-jbh" secondAttribute="trailing" constant="40" id="DNf-U4-hUG"/>
                             <constraint firstItem="JUc-4l-zkO" firstAttribute="leading" secondItem="VUV-Wl-rEr" secondAttribute="leading" constant="16" id="JB2-Qu-zFj"/>
                             <constraint firstItem="SOe-fx-jbh" firstAttribute="leading" secondItem="VUV-Wl-rEr" secondAttribute="leading" constant="40" id="NLc-Ks-QHi"/>
                             <constraint firstItem="VUV-Wl-rEr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JUc-4l-zkO" secondAttribute="trailing" symbolic="YES" id="cCu-xn-Ymd"/>
-                            <constraint firstItem="SOe-fx-jbh" firstAttribute="top" secondItem="JUc-4l-zkO" secondAttribute="bottom" constant="40" id="cu5-gC-iWJ"/>
+                            <constraint firstItem="SOe-fx-jbh" firstAttribute="top" secondItem="JUc-4l-zkO" secondAttribute="bottom" constant="20" id="cu5-gC-iWJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUV-Wl-rEr"/>
                     </view>
@@ -538,7 +539,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4j-QO-obC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDz-5Q-WAu">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDz-5Q-WAu" userLabel="Text">
                                         <rect key="frame" x="8" y="263" width="375" height="692.5"/>
                                         <string key="text">Вот самый лучший его портрет, какой мне после удалось нарисовать. Но на моем рисунке он, конечно, далеко не так хорош, как был на самом деле. Это не моя вина. Когда мне было шесть лет, взрослые внушили мне, что художника из меня не выйдет, и я ничего не научился рисовать, кроме удавов - снаружи и изнутри. Итак, я во все глаза смотрел на это необычайное явление. Не забудьте, я находился за тысячи миль от человеческого жилья. А между тем ничуть не похоже было, чтобы этот малыш заблудился, или до смерти устал и напуган, или умирает от голода и жажды. По его виду никак нельзя было сказать, что это ребенок, потерявшийся в необитаемой пустыне, вдалеке от всякого жилья. Все это было так таинственно и непостижимо, что я не посмел отказаться. Хоть и нелепо это было здесь, в пустыне, на волосок от смерти, я все-таки достал из кармана лист бумаги и вечное перо. Но тут же вспомнил, что учился-то я больше географии, истории, арифметике и правописанию, - и сказал малышу (немножко даже сердито сказал), что не умею рисовать. </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -589,6 +590,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="0.9572519538140718" blue="0.98747636076739975" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="9Oa-j9-1bR" firstAttribute="top" secondItem="qU5-F3-mdO" secondAttribute="top" constant="8" id="7Hs-mU-hSi"/>
                                     <constraint firstItem="hVD-hf-V4g" firstAttribute="leading" secondItem="ofo-NO-2qJ" secondAttribute="trailing" constant="25" id="BSg-q9-a1M"/>
@@ -639,7 +641,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uR6-FV-YqA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP0-jK-amt">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP0-jK-amt" userLabel="Text">
                                         <rect key="frame" x="8" y="366" width="375" height="692.5"/>
                                         <string key="text">Вот самый лучший его портрет, какой мне после удалось нарисовать. Но на моем рисунке он, конечно, далеко не так хорош, как был на самом деле. Это не моя вина. Когда мне было шесть лет, взрослые внушили мне, что художника из меня не выйдет, и я ничего не научился рисовать, кроме удавов - снаружи и изнутри. Итак, я во все глаза смотрел на это необычайное явление. Не забудьте, я находился за тысячи миль от человеческого жилья. А между тем ничуть не похоже было, чтобы этот малыш заблудился, или до смерти устал и напуган, или умирает от голода и жажды. По его виду никак нельзя было сказать, что это ребенок, потерявшийся в необитаемой пустыне, вдалеке от всякого жилья. Все это было так таинственно и непостижимо, что я не посмел отказаться. Хоть и нелепо это было здесь, в пустыне, на волосок от смерти, я все-таки достал из кармана лист бумаги и вечное перо. Но тут же вспомнил, что учился-то я больше географии, истории, арифметике и правописанию, - и сказал малышу (немножко даже сердито сказал), что не умею рисовать. </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -684,6 +686,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="0.95725195380000005" blue="0.98747636080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="SSS-dY-5nh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zjk-XK-xIB" secondAttribute="trailing" symbolic="YES" id="0iA-EF-a7n"/>
                                     <constraint firstItem="HK7-Dx-10s" firstAttribute="leading" secondItem="SSS-dY-5nh" secondAttribute="leading" constant="30" id="1Gc-Zs-CVd"/>
@@ -737,6 +740,6 @@
         <image name="user-profile-pngrepo-com-4" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Qu-Y7-pKK"/>
+        <segue reference="9Wl-X5-pJJ"/>
     </inferredMetricsTieBreakers>
 </document>
