@@ -8,10 +8,10 @@
 
 import UIKit
 
-let dsOfCV = DataSource()
-var students2 = dsOfCV.students
-
 class CollectionViewController: UIViewController {
+    
+    let dataSourceOfCV = DataSource()
+    var students = DataSource().students
     
     var collectionView: UICollectionView
     @IBOutlet weak var labelStudents: UILabel!
@@ -31,7 +31,7 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(collectionView)
         
-        collectionView.dataSource = dsOfCV
+        collectionView.dataSource = dataSourceOfCV
         collectionView.delegate = self
         
         collectionView.backgroundColor = .white
@@ -57,10 +57,10 @@ class CollectionViewController: UIViewController {
     //метод говорит делегату, какой выбран пользователем ряд (нажатием на ряд пользователем). здесь можно модифицировать ряд
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
-                   ProfileManager.shared.name = students2[indexPath.row].name
-                   ProfileManager.shared.surname = students2[indexPath.row].surname
+                   ProfileManager.shared.name = students[indexPath.row].name
+                   ProfileManager.shared.surname = students[indexPath.row].surname
         //загружаются разные стили профилей в зависимости от пола студента
-                switch students2[indexPath.row].gender {
+                switch students[indexPath.row].gender {
                 case .male:
                     performSegue(withIdentifier: "profile3VC", sender: nil)
                 case .female:
