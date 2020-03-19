@@ -10,6 +10,7 @@ import UIKit
 // swiftlint:disable all
 
 class DataSource: NSObject, UICollectionViewDataSource {
+    
     var students: [Student] = []
      // в инициализатор экземпляра класса записываем массив имен в массив students
          override init() {

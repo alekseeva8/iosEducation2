@@ -12,8 +12,10 @@ let dsOfCV = DataSource()
 var students2 = dsOfCV.students
 
 class CollectionViewController: UIViewController {
+    
     var collectionView: UICollectionView
     @IBOutlet weak var labelStudents: UILabel!
+    
     required init?(coder: NSCoder) {
     //создание collectionView (property viewcontroller) с UICollectionViewFlowLayout (non-customised, build-in layout)
         let layout = UICollectionViewFlowLayout()
@@ -24,11 +26,14 @@ class CollectionViewController: UIViewController {
         super.init(coder: coder)
         collectionView.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: StudentCollectionViewCell.reuseID)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
+        
         collectionView.dataSource = dsOfCV
         collectionView.delegate = self
+        
         collectionView.backgroundColor = .white
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,8 +49,8 @@ class CollectionViewController: UIViewController {
          @IBAction func unwindToStudentsList(unwindSegue: UIStoryboardSegue) {}
 }
 
-extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemWidth = (UIScreen.main.bounds.width - 20 - 20 - 10/2)/2
         return CGSize(width: itemWidth, height: 300)
     }

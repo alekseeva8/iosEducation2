@@ -24,6 +24,7 @@ class SignInViewController: UIViewController {
          //инициализация singleton, передача в него значения loginTF, passwordTF
         ProfileManager.shared.login = loginTextField.text ?? ""
         ProfileManager.shared.password = passwordTextField.text ?? ""
+        
         let validator = Validator()
         if validator.isLoginCorrect(login: ProfileManager.shared.login) == true &&
             validator.isLoginContainsCorrectSymbols(login: ProfileManager.shared.login) == true &&

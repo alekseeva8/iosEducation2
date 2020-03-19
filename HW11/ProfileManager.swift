@@ -16,6 +16,7 @@ class ProfileManager {
         var password: String = ""
         var name = ""
         var surname = ""
+    
     private init() {
     }
 }

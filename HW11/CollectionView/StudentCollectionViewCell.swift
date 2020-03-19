@@ -27,14 +27,18 @@ class StudentCollectionViewCell: UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         return label
     }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         addSubview(studentImageView)
         addSubview(nameLabel)
         addSubview(surnameLabel)
+        
         studentImageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         surnameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         studentImageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         studentImageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         studentImageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
