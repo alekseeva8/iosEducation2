@@ -14,10 +14,6 @@ struct Student {
     var surname: String
     var gender: Gender
     var image: UIImage
-    
-//    enum image {
-//        case 
-//    }
 
     enum Gender {
     case male, female
