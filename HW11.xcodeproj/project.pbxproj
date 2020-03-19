@@ -15,7 +15,7 @@
 		F34C1E0823FC5C9E00094DA0 /* XIBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F34C1E0623FC5C9E00094DA0 /* XIBTableViewCell.xib */; };
 		F3547C3B242254CD00820800 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3547C3A242254CD00820800 /* CollectionViewController.swift */; };
 		F3547C3D2422720E00820800 /* StudentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3547C3C2422720E00820800 /* StudentCollectionViewCell.swift */; };
-		F3547C4724235B3200820800 /* Storage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3547C4624235B3200820800 /* Storage2.swift */; };
+		F3547C4724235B3200820800 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3547C4624235B3200820800 /* DataSource.swift */; };
 		F35C834D23FE630E005D69BC /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C834C23FE630E005D69BC /* Storage.swift */; };
 		F36F63A523FA771900FEB355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F63A423FA771900FEB355 /* AppDelegate.swift */; };
 		F36F63A723FA771900FEB355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F63A623FA771900FEB355 /* SceneDelegate.swift */; };
@@ -46,7 +46,7 @@
 		F34C1E0623FC5C9E00094DA0 /* XIBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XIBTableViewCell.xib; sourceTree = "<group>"; };
 		F3547C3A242254CD00820800 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		F3547C3C2422720E00820800 /* StudentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCollectionViewCell.swift; sourceTree = "<group>"; };
-		F3547C4624235B3200820800 /* Storage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Storage2.swift; path = /Users/elena/Desktop/iosEducation2/HW11/CollectionView/Storage2.swift; sourceTree = "<absolute>"; };
+		F3547C4624235B3200820800 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = /Users/elena/Desktop/iosEducation2/HW11/CollectionView/DataSource.swift; sourceTree = "<absolute>"; };
 		F35C834C23FE630E005D69BC /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F36F63A123FA771900FEB355 /* HW11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36F63A423FA771900FEB355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 			children = (
 				F3547C3C2422720E00820800 /* StudentCollectionViewCell.swift */,
 				F3547C3A242254CD00820800 /* CollectionViewController.swift */,
-				F3547C4624235B3200820800 /* Storage2.swift */,
+				F3547C4624235B3200820800 /* DataSource.swift */,
 				F3547C4824235B9E00820800 /* Profiles */,
 			);
 			path = CollectionView;
@@ -335,7 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3547C4724235B3200820800 /* Storage2.swift in Sources */,
+				F3547C4724235B3200820800 /* DataSource.swift in Sources */,
 				F34C1E0423FC59BB00094DA0 /* CodeTableViewCell.swift in Sources */,
 				F35C834D23FE630E005D69BC /* Storage.swift in Sources */,
 				F36F63BD23FA929C00FEB355 /* TableVViewController.swift in Sources */,

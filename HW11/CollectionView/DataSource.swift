@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 // swiftlint:disable all
 
-class Storage2: NSObject, UICollectionViewDataSource {
+class DataSource: NSObject, UICollectionViewDataSource {
     var students: [Student] = []
      // в инициализатор экземпляра класса записываем массив имен в массив students
          override init() {
@@ -18,19 +18,28 @@ class Storage2: NSObject, UICollectionViewDataSource {
     }
     //2 обязательные функции DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        100
+        students.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StudentCollectionViewCell.reuseID, for: indexPath) as! StudentCollectionViewCell
         cell.studentImageView.image = students[indexPath.row].image
         cell.nameLabel.text = students[indexPath.row].name
         cell.surnameLabel.text = students[indexPath.row].surname
-        cell.backgroundColor = .systemPink
+        cell.backgroundColor = .white
+        //cell.layer.borderWidth = 1
+        //cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.cornerRadius = 5
+        cell.layer.shadowRadius = 9
+        //прозрачность тени
+        cell.layer.shadowOpacity = 0.3
+        //насколько отдаляется тень
+        cell.layer.shadowOffset = CGSize(width: 5, height: 8)
+        cell.clipsToBounds = false
         return cell
     }
 }
 
-extension Storage2 {
+extension DataSource {
     //функция, переводящяя Name.txt в массив имен. [при вызове запишем массив в массив students]
     func prepareArray() -> [Student] {
             var array: [Student] = []

@@ -8,8 +8,8 @@
 
 import UIKit
 
-let storage2 = Storage2()
-var students2 = storage2.students
+let ds = DataSource()
+var students2 = ds.students
 
 class CollectionViewController: UIViewController {
     var collectionView: UICollectionView
@@ -27,13 +27,13 @@ class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
-        collectionView.dataSource = storage2
+        collectionView.dataSource = ds
         collectionView.delegate = self
-        collectionView.backgroundColor = .green
+        collectionView.backgroundColor = .white
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-         //чтобы ячейки не доставали до краев collectionview на 40
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 40)
+         //чтобы ячейки не доставали до краев collectionview на 20
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: labelStudents.bottomAnchor, constant: 8).isActive = true
@@ -44,7 +44,7 @@ class CollectionViewController: UIViewController {
 
 extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemWidth = (UIScreen.main.bounds.width - 40 - 40 - 10/2)/2
+        let itemWidth = (UIScreen.main.bounds.width - 20 - 20 - 10/2)/2
         return CGSize(width: itemWidth, height: 300)
     }
     //метод говорит делегату, какой выбран пользователем ряд (нажатием на ряд пользователем). здесь можно модифицировать ряд

@@ -13,7 +13,7 @@ class StudentCollectionViewCell: UICollectionViewCell {
     //создание properties ячейки
     let studentImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .orange
+        imageView.backgroundColor = .white
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
