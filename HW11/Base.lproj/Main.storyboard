@@ -613,7 +613,7 @@
                             <constraint firstItem="aDz-5Q-WAu" firstAttribute="width" secondItem="nCb-eS-dXp" secondAttribute="width" id="11N-uz-oxU"/>
                             <constraint firstAttribute="bottom" secondItem="i4j-QO-obC" secondAttribute="bottom" id="5y1-WV-Yr6"/>
                             <constraint firstItem="i4j-QO-obC" firstAttribute="leading" secondItem="pmx-1i-sfK" secondAttribute="leading" id="HAY-ZK-1Vz"/>
-                            <constraint firstItem="i4j-QO-obC" firstAttribute="top" secondItem="pmx-1i-sfK" secondAttribute="top" id="NS4-Zl-eta"/>
+                            <constraint firstItem="i4j-QO-obC" firstAttribute="top" secondItem="nCb-eS-dXp" secondAttribute="top" id="NS4-Zl-eta"/>
                             <constraint firstItem="i4j-QO-obC" firstAttribute="trailing" secondItem="pmx-1i-sfK" secondAttribute="trailing" id="uMH-Qx-70i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pmx-1i-sfK"/>
@@ -717,7 +717,7 @@
                             <constraint firstItem="uR6-FV-YqA" firstAttribute="leading" secondItem="OXJ-sa-neG" secondAttribute="leading" id="L8N-CC-oMe"/>
                             <constraint firstItem="uR6-FV-YqA" firstAttribute="trailing" secondItem="OXJ-sa-neG" secondAttribute="trailing" id="RmQ-yP-cXX"/>
                             <constraint firstAttribute="bottom" secondItem="uR6-FV-YqA" secondAttribute="bottom" id="iqR-Gi-lHP"/>
-                            <constraint firstItem="uR6-FV-YqA" firstAttribute="top" secondItem="OXJ-sa-neG" secondAttribute="top" id="rvc-JH-Sgq"/>
+                            <constraint firstItem="uR6-FV-YqA" firstAttribute="top" secondItem="JOp-hH-SvL" secondAttribute="top" id="rvc-JH-Sgq"/>
                             <constraint firstItem="hP0-jK-amt" firstAttribute="width" secondItem="JOp-hH-SvL" secondAttribute="width" id="ui2-GZ-i8f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OXJ-sa-neG"/>

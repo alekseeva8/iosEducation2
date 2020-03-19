@@ -110,6 +110,7 @@
 		F3547C442422956600820800 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				F31495E7240CFF75005E7865 /* Prototype cells */,
 				F35C834C23FE630E005D69BC /* Storage.swift */,
 				F36F63BC23FA929C00FEB355 /* TableVViewController.swift */,
 			);
@@ -170,7 +171,6 @@
 				F3FABC9D23FFE1F600CD77B2 /* Validator.swift */,
 				F3FABC9B23FFE14100CD77B2 /* ProfileManager.swift */,
 				F3547C442422956600820800 /* TableView */,
-				F31495E7240CFF75005E7865 /* Prototype cells */,
 				F36F63AD23FA771A00FEB355 /* Assets.xcassets */,
 				F36F63AF23FA771A00FEB355 /* LaunchScreen.storyboard */,
 				F36F63B223FA771A00FEB355 /* Info.plist */,

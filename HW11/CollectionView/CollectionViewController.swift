@@ -22,7 +22,7 @@ class CollectionViewController: UIViewController {
         layout.minimumLineSpacing = 10
         self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         super.init(coder: coder)
-        collectionView.register(StudentCollectionViewCell.self,forCellWithReuseIdentifier: StudentCollectionViewCell.reuseID)
+        collectionView.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: StudentCollectionViewCell.reuseID)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

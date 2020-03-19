@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class ProfileManager {
+    //singleton
     static let shared = ProfileManager()
         var login: String = ""
         var password: String = ""
