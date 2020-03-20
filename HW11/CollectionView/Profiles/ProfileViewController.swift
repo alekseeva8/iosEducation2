@@ -29,12 +29,8 @@ class ProfileViewController: UIViewController {
 //        button.translatesAutoresizingMaskIntoConstraints = false
 //        button.widthAnchor.constraint(equalToConstant: 130).isActive = true
 //        button.heightAnchor.constraint(equalToConstant: 35).isActive = true
-//        trailing = view.trailingAnchor.constraint(equalTo: button.trailingAnchor)
-//        trailing?.isActive = true
-//        trailing?.constant = 8
-//        let top = button.topAnchor.constraint(equalTo: view.topAnchor)
-//        top.isActive = true
-//        top.constant = 20
+//        trailing = view.trailingAnchor.constraint(equalTo: button.trailingAnchor, constant: 8).isActive = true
+//        let top = button.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

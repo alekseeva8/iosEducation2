@@ -24,11 +24,11 @@ class SignInViewController: UIViewController {
          //инициализация singleton, передача в него значения loginTF, passwordTF
         ProfileManager.shared.login = loginTextField.text ?? ""
         ProfileManager.shared.password = passwordTextField.text ?? ""
+        
         let validator = Validator()
         if validator.isLoginCorrect(login: ProfileManager.shared.login) == true &&
             validator.isLoginContainsCorrectSymbols(login: ProfileManager.shared.login) == true &&
             validator.isPasswordCorrect(password: ProfileManager.shared.password) == true {
-             signButton.backgroundColor = UIColor.favoriteColor
              performSegue(withIdentifier: "fromSignToMain", sender: nil)
         } else {
             validator.alertSending(self)
@@ -41,10 +41,4 @@ class SignInViewController: UIViewController {
 //            mainVC.loginInformation = "Welcome, \(ProfileManager.shared.login)!"
 //        }
 //    }
-}
-    //добавление property с моим любимым цветом
-    extension UIColor {
-    static var favoriteColor: UIColor {
-        return UIColor(red: 0.1, green: 0.8, blue: 0.1, alpha: 1.0)
-    }
 }

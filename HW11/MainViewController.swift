@@ -9,10 +9,11 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var classButton: UIButton!
-    //var loginInformation = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         welcomeLabel.text = "Welcome, \(ProfileManager.shared.login)!"
