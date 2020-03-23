@@ -34,7 +34,7 @@ class CollectionViewController: UIViewController {
         collectionView.dataSource = dataSourceOfCV
         collectionView.delegate = self
         
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .yellow
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
          //чтобы ячейки не доставали до краев collectionview на 20

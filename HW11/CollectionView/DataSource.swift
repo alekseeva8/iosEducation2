@@ -59,10 +59,10 @@ extension DataSource {
             studentSplitted = studentSubstring.split(separator: " ")
             let studentSplittedString = String(studentSplitted.last ?? "")
             if studentSplittedString == "муж" {
-                array.append(Student(name: String(studentSplitted.first ?? ""), surname: String(studentSplitted[1]), gender: .male, image: UIImage(named: "user-profile-pngrepo-com-3")!))
+                array.append(Student(name: String(studentSplitted.first ?? ""), surname: String(studentSplitted[1]), gender: .male, image: UIImage(named: "boy")!))
             } else {
                array.append(Student(name: String(studentSplitted.first ?? ""),
-               surname: String(studentSplitted[1]), gender: .female, image: UIImage(named: "user-profile-pngrepo-com-4")!))
+               surname: String(studentSplitted[1]), gender: .female, image: UIImage(named: "girl")!))
             }
         }
             return array

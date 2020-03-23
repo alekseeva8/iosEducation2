@@ -38,11 +38,12 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cC2-1Y-6pG" userLabel="signInButton">
-                                <rect key="frame" x="152.5" y="427" width="70" height="36"/>
-                                <color key="backgroundColor" red="0.91349805480000001" green="1" blue="0.7517845313" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="157.5" y="427" width="60" height="36"/>
+                                <color key="backgroundColor" red="0.97576718829999998" green="1" blue="0.55185908309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="SIGN IN">
-                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="heavy"/>
                                 </state>
                                 <connections>
                                     <action selector="signInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eih-Iu-Whq"/>
@@ -54,6 +55,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello! Join to our class!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVR-az-p18">
+                                <rect key="frame" x="63" y="40" width="249" height="30"/>
+                                <color key="backgroundColor" red="0.97576718829999998" green="1" blue="0.55185908309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95725195380000005" blue="0.98747636080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -61,6 +69,7 @@
                             <constraint firstItem="WZ7-rk-xR9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="BuN-yr-q2P"/>
                             <constraint firstItem="x3f-tT-ze1" firstAttribute="leading" secondItem="kFh-oO-AOq" secondAttribute="leading" id="Kel-tQ-AEu"/>
                             <constraint firstItem="AaR-VB-Y4I" firstAttribute="top" secondItem="x3f-tT-ze1" secondAttribute="bottom" constant="10" id="L8Z-es-EFf"/>
+                            <constraint firstItem="nVR-az-p18" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="MXb-bc-nue"/>
                             <constraint firstItem="kFh-oO-AOq" firstAttribute="top" secondItem="WZ7-rk-xR9" secondAttribute="bottom" constant="10" id="Q3P-f6-reU"/>
                             <constraint firstItem="AaR-VB-Y4I" firstAttribute="leading" secondItem="WZ7-rk-xR9" secondAttribute="leading" id="QuW-cL-SGR"/>
                             <constraint firstItem="cC2-1Y-6pG" firstAttribute="top" secondItem="kFh-oO-AOq" secondAttribute="bottom" constant="35" id="Sya-FT-1Q2"/>
@@ -69,8 +78,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="x3f-tT-ze1" secondAttribute="trailing" symbolic="YES" id="hgf-Dw-gXo"/>
                             <constraint firstItem="WZ7-rk-xR9" firstAttribute="top" secondItem="AaR-VB-Y4I" secondAttribute="bottom" constant="30" id="jtU-13-Wwg"/>
                             <constraint firstItem="kFh-oO-AOq" firstAttribute="leading" secondItem="WZ7-rk-xR9" secondAttribute="leading" id="loJ-Rb-BGv"/>
+                            <constraint firstItem="nVR-az-p18" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mg7-Xr-siT"/>
                             <constraint firstItem="kFh-oO-AOq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WZ7-rk-xR9" secondAttribute="leading" id="oTk-jl-eGb"/>
                             <constraint firstItem="cC2-1Y-6pG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="s9M-im-A7G"/>
+                            <constraint firstItem="x3f-tT-ze1" firstAttribute="top" relation="lessThanOrEqual" secondItem="nVR-az-p18" secondAttribute="bottom" constant="180" id="saE-0u-4st"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WZ7-rk-xR9" secondAttribute="trailing" constant="178.5" id="ugG-a6-N7T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -97,17 +108,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="TwE-Xc-G8R">
-                                <rect key="frame" x="154.5" y="212" width="66.5" height="243.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="webinar" translatesAutoresizingMaskIntoConstraints="NO" id="Pum-pE-FbM">
+                                <rect key="frame" x="64" y="20" width="247" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="RZF-zB-rJk"/>
+                                    <constraint firstAttribute="height" constant="220" id="rmk-kG-t1s"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SO-F8-j9d" userLabel="welcomeLabel">
+                                <rect key="frame" x="154.5" y="260" width="66.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.28538202930000001" green="0.7321392283" blue="0.32191846549999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="114" translatesAutoresizingMaskIntoConstraints="NO" id="jLt-MV-zBd">
+                                <rect key="frame" x="68.5" y="311.5" width="238" height="41"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SO-F8-j9d" userLabel="welcomeLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="33.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <color key="textColor" red="0.28538202930000001" green="0.7321392283" blue="0.32191846549999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rp-0a-MhU" userLabel="profileButton">
-                                        <rect key="frame" x="0.0" y="97.5" width="66.5" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="41"/>
+                                        <color key="backgroundColor" red="0.97576718826485576" green="1" blue="0.5518590831004988" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Profile"/>
                                         <connections>
@@ -115,7 +134,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwn-Sd-yN5" userLabel="classButton">
-                                        <rect key="frame" x="0.0" y="202.5" width="66.5" height="41"/>
+                                        <rect key="frame" x="180" y="0.0" width="58" height="41"/>
+                                        <color key="backgroundColor" red="0.97576718829999998" green="1" blue="0.55185908309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Class"/>
                                         <connections>
@@ -127,8 +147,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95725195380000005" blue="0.98747636080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="TwE-Xc-G8R" firstAttribute="centerY" secondItem="V4g-2T-p1v" secondAttribute="centerY" id="0FM-do-95d"/>
-                            <constraint firstItem="TwE-Xc-G8R" firstAttribute="centerX" secondItem="V4g-2T-p1v" secondAttribute="centerX" id="l6J-9L-92f"/>
+                            <constraint firstItem="1SO-F8-j9d" firstAttribute="top" secondItem="Pum-pE-FbM" secondAttribute="bottom" constant="20" id="FbH-bY-2DU"/>
+                            <constraint firstItem="Pum-pE-FbM" firstAttribute="centerX" secondItem="ZmK-K8-Ahe" secondAttribute="centerX" id="KTv-64-le2"/>
+                            <constraint firstItem="jLt-MV-zBd" firstAttribute="centerX" secondItem="ZmK-K8-Ahe" secondAttribute="centerX" id="L34-8N-JEY"/>
+                            <constraint firstItem="1SO-F8-j9d" firstAttribute="centerX" secondItem="ZmK-K8-Ahe" secondAttribute="centerX" id="NsQ-m5-omo"/>
+                            <constraint firstItem="Pum-pE-FbM" firstAttribute="top" secondItem="V4g-2T-p1v" secondAttribute="top" constant="20" id="nuG-hz-RLj"/>
+                            <constraint firstItem="jLt-MV-zBd" firstAttribute="top" secondItem="1SO-F8-j9d" secondAttribute="bottom" constant="18" id="qrR-HF-aAB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V4g-2T-p1v"/>
                     </view>
@@ -141,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWt-FN-eLX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522" y="115"/>
+            <point key="canvasLocation" x="1520.8" y="114.69265367316342"/>
         </scene>
         <!--Profile-->
         <scene sceneID="mle-6z-Weo">
@@ -155,14 +179,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymj-3J-pkv" userLabel="Text">
-                                        <rect key="frame" x="8" y="376" width="375" height="692.5"/>
-                                        <string key="text">Вот самый лучший его портрет, какой мне после удалось нарисовать. Но на моем рисунке он, конечно, далеко не так хорош, как был на самом деле. Это не моя вина. Когда мне было шесть лет, взрослые внушили мне, что художника из меня не выйдет, и я ничего не научился рисовать, кроме удавов - снаружи и изнутри. Итак, я во все глаза смотрел на это необычайное явление. Не забудьте, я находился за тысячи миль от человеческого жилья. А между тем ничуть не похоже было, чтобы этот малыш заблудился, или до смерти устал и напуган, или умирает от голода и жажды. По его виду никак нельзя было сказать, что это ребенок, потерявшийся в необитаемой пустыне, вдалеке от всякого жилья. Все это было так таинственно и непостижимо, что я не посмел отказаться. Хоть и нелепо это было здесь, в пустыне, на волосок от смерти, я все-таки достал из кармана лист бумаги и вечное перо. Но тут же вспомнил, что учился-то я больше географии, истории, арифметике и правописанию, - и сказал малышу (немножко даже сердито сказал), что не умею рисовать. </string>
+                                        <rect key="frame" x="8" y="356" width="375" height="644.5"/>
+                                        <mutableString key="text">Я, Сергеева Елена Анатольевна, родилась 25 июня 1984 года в г. Люберцы Московской области.
+В 1991 году была зачислена в 1-ый класс средней общеобразовательной школы №123 г. Москвы. В 2001 году окончила эту школу с серебряной медалью. В этом же году поступила в Московский государственный областной университет на экономический факультет, специальность - «Менеджмент организации». В 2006 году окончила университет и получила диплом специалиста.
+После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
+Семейное положение – не замужем. После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
+Семейное положение – не замужем.</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeJ-N4-TB7" userLabel="surnameLabel">
-                                        <rect key="frame" x="141" y="336" width="101" height="32"/>
+                                        <rect key="frame" x="141" y="316" width="101" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="e3X-Ba-DyG"/>
                                         </constraints>
@@ -170,15 +198,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-profile-pngrepo-com" translatesAutoresizingMaskIntoConstraints="NO" id="yDb-mZ-bbL">
-                                        <rect key="frame" x="87.5" y="58" width="200" height="200"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="yDb-mZ-bbL">
+                                        <rect key="frame" x="97.5" y="58" width="180" height="180"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="6fe-9q-L94"/>
-                                            <constraint firstAttribute="height" constant="200" id="Tqs-nC-hqD"/>
+                                            <constraint firstAttribute="width" constant="180" id="6fe-9q-L94"/>
+                                            <constraint firstAttribute="height" constant="180" id="Tqs-nC-hqD"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="563-Wh-zBS" userLabel="nameLabel">
-                                        <rect key="frame" x="141" y="296" width="67" height="32"/>
+                                        <rect key="frame" x="141" y="276" width="67" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="pOC-iL-q3I"/>
                                         </constraints>
@@ -540,13 +568,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDz-5Q-WAu" userLabel="Text">
-                                        <rect key="frame" x="8" y="263" width="375" height="692.5"/>
-                                        <string key="text">Вот самый лучший его портрет, какой мне после удалось нарисовать. Но на моем рисунке он, конечно, далеко не так хорош, как был на самом деле. Это не моя вина. Когда мне было шесть лет, взрослые внушили мне, что художника из меня не выйдет, и я ничего не научился рисовать, кроме удавов - снаружи и изнутри. Итак, я во все глаза смотрел на это необычайное явление. Не забудьте, я находился за тысячи миль от человеческого жилья. А между тем ничуть не похоже было, чтобы этот малыш заблудился, или до смерти устал и напуган, или умирает от голода и жажды. По его виду никак нельзя было сказать, что это ребенок, потерявшийся в необитаемой пустыне, вдалеке от всякого жилья. Все это было так таинственно и непостижимо, что я не посмел отказаться. Хоть и нелепо это было здесь, в пустыне, на волосок от смерти, я все-таки достал из кармана лист бумаги и вечное перо. Но тут же вспомнил, что учился-то я больше географии, истории, арифметике и правописанию, - и сказал малышу (немножко даже сердито сказал), что не умею рисовать. </string>
+                                        <rect key="frame" x="8" y="263" width="375" height="644.5"/>
+                                        <mutableString key="text">Я, Сергеева Елена Анатольевна, родилась 25 июня 1984 года в г. Люберцы Московской области.
+В 1991 году была зачислена в 1-ый класс средней общеобразовательной школы №123 г. Москвы. В 2001 году окончила эту школу с серебряной медалью. В этом же году поступила в Московский государственный областной университет на экономический факультет, специальность - «Менеджмент организации». В 2006 году окончила университет и получила диплом специалиста.
+После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
+Семейное положение – не замужем. После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
+Семейное положение – не замужем.</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-profile-pngrepo-com-4" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-NO-2qJ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-NO-2qJ">
                                         <rect key="frame" x="8" y="64" width="200" height="180"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="bwa-GE-zM7"/>
@@ -575,7 +607,7 @@
                                                     <constraint firstAttribute="height" constant="32" id="Rql-yJ-s07"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmQ-fZ-QPl" userLabel="surnameLabel">
@@ -584,7 +616,7 @@
                                                     <constraint firstAttribute="height" constant="32" id="RHD-X8-GAQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -623,6 +655,7 @@
                         <outlet property="imageOfProfile2" destination="ofo-NO-2qJ" id="B3D-uu-uTE"/>
                         <outlet property="profileNameLabel" destination="9DG-9o-O6h" id="5rq-i4-A8s"/>
                         <outlet property="profileSurnameLabel" destination="AmQ-fZ-QPl" id="n8G-vd-ngE"/>
+                        <outlet property="textLabel" destination="aDz-5Q-WAu" id="gV9-Yl-Ih4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgh-Yy-LW6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -642,16 +675,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP0-jK-amt" userLabel="Text">
-                                        <rect key="frame" x="8" y="366" width="375" height="692.5"/>
-                                        <string key="text">Вот самый лучший его портрет, какой мне после удалось нарисовать. Но на моем рисунке он, конечно, далеко не так хорош, как был на самом деле. Это не моя вина. Когда мне было шесть лет, взрослые внушили мне, что художника из меня не выйдет, и я ничего не научился рисовать, кроме удавов - снаружи и изнутри. Итак, я во все глаза смотрел на это необычайное явление. Не забудьте, я находился за тысячи миль от человеческого жилья. А между тем ничуть не похоже было, чтобы этот малыш заблудился, или до смерти устал и напуган, или умирает от голода и жажды. По его виду никак нельзя было сказать, что это ребенок, потерявшийся в необитаемой пустыне, вдалеке от всякого жилья. Все это было так таинственно и непостижимо, что я не посмел отказаться. Хоть и нелепо это было здесь, в пустыне, на волосок от смерти, я все-таки достал из кармана лист бумаги и вечное перо. Но тут же вспомнил, что учился-то я больше географии, истории, арифметике и правописанию, - и сказал малышу (немножко даже сердито сказал), что не умею рисовать. </string>
+                                        <rect key="frame" x="8" y="324" width="375" height="644.5"/>
+                                        <mutableString key="text">Я, Сергеева Елена Анатольевна, родилась 25 июня 1984 года в г. Люберцы Московской области.
+В 1991 году была зачислена в 1-ый класс средней общеобразовательной школы №123 г. Москвы. В 2001 году окончила эту школу с серебряной медалью. В этом же году поступила в Московский государственный областной университет на экономический факультет, специальность - «Менеджмент организации». В 2006 году окончила университет и получила диплом специалиста.
+После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
+Семейное положение – не замужем. После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
+Семейное положение – не замужем.</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-profile-pngrepo-com-3" translatesAutoresizingMaskIntoConstraints="NO" id="r41-Yz-Po9">
-                                        <rect key="frame" x="0.0" y="58" width="375" height="220"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boy" translatesAutoresizingMaskIntoConstraints="NO" id="r41-Yz-Po9">
+                                        <rect key="frame" x="0.0" y="58" width="375" height="180"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="220" id="Apm-bD-Acg"/>
+                                            <constraint firstAttribute="height" constant="180" id="Apm-bD-Acg"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07y-dc-H3Y" userLabel="To Main Screen Button">
@@ -668,21 +705,21 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HK7-Dx-10s" userLabel="surnameLabel">
-                                        <rect key="frame" x="30" y="326" width="101" height="32"/>
+                                        <rect key="frame" x="30" y="284" width="101" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="78w-p8-XmL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjk-XK-xIB" userLabel="nameLabel">
-                                        <rect key="frame" x="30" y="286" width="67" height="32"/>
+                                        <rect key="frame" x="30" y="246" width="67" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="Vga-iJ-90O"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -695,7 +732,7 @@
                                     <constraint firstItem="07y-dc-H3Y" firstAttribute="top" secondItem="SSS-dY-5nh" secondAttribute="top" constant="8" id="LDk-Kg-obK"/>
                                     <constraint firstItem="zjk-XK-xIB" firstAttribute="leading" secondItem="HK7-Dx-10s" secondAttribute="leading" id="OAu-kK-oaL"/>
                                     <constraint firstItem="zjk-XK-xIB" firstAttribute="leading" secondItem="SSS-dY-5nh" secondAttribute="leading" constant="30" id="PlI-w8-nWz"/>
-                                    <constraint firstItem="HK7-Dx-10s" firstAttribute="top" secondItem="zjk-XK-xIB" secondAttribute="bottom" constant="8" id="S1K-Gq-lCW"/>
+                                    <constraint firstItem="HK7-Dx-10s" firstAttribute="top" secondItem="zjk-XK-xIB" secondAttribute="bottom" constant="6" id="S1K-Gq-lCW"/>
                                     <constraint firstItem="r41-Yz-Po9" firstAttribute="leading" secondItem="SSS-dY-5nh" secondAttribute="leading" id="UxP-Qk-Lkm"/>
                                     <constraint firstItem="SSS-dY-5nh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="07y-dc-H3Y" secondAttribute="trailing" symbolic="YES" id="XRQ-of-fBU"/>
                                     <constraint firstItem="hP0-jK-amt" firstAttribute="top" secondItem="HK7-Dx-10s" secondAttribute="bottom" constant="8" id="eWU-RU-Dbo"/>
@@ -735,9 +772,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="user-profile-pngrepo-com" width="256" height="256"/>
+        <image name="boy" width="58.5" height="58.5"/>
+        <image name="girl" width="60" height="60"/>
+        <image name="user" width="256" height="256"/>
         <image name="user-profile-pngrepo-com-3" width="256" height="256"/>
         <image name="user-profile-pngrepo-com-4" width="256" height="256"/>
+        <image name="webinar" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9Wl-X5-pJJ"/>

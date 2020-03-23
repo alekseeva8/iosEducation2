@@ -18,6 +18,9 @@ class SignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        signButton.layer.borderColor = UIColor.systemBlue.cgColor
+//        signButton.layer.borderWidth = 1
+        signButton.layer.cornerRadius = 5
     }
     @IBAction func signInButtonPressed(_ sender: Any) {
         //условия для перехода к другому экрану (при нажатии на кнопку)
