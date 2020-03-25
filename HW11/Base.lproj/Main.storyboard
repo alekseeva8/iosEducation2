@@ -139,6 +139,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Class"/>
                                         <connections>
+                                            <action selector="classButtonTapped:" destination="ukI-1m-eye" eventType="touchUpInside" id="mWl-hb-mtQ"/>
                                             <segue destination="fbe-sZ-YC1" kind="presentation" modalPresentationStyle="fullScreen" id="ZDl-Ef-udn"/>
                                         </connections>
                                     </button>
@@ -180,11 +181,11 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymj-3J-pkv" userLabel="Text">
                                         <rect key="frame" x="8" y="356" width="375" height="644.5"/>
-                                        <mutableString key="text">Я, Сергеева Елена Анатольевна, родилась 25 июня 1984 года в г. Люберцы Московской области.
+                                        <string key="text">Я, Сергеева Елена Анатольевна, родилась 25 июня 1984 года в г. Люберцы Московской области.
 В 1991 году была зачислена в 1-ый класс средней общеобразовательной школы №123 г. Москвы. В 2001 году окончила эту школу с серебряной медалью. В этом же году поступила в Московский государственный областной университет на экономический факультет, специальность - «Менеджмент организации». В 2006 году окончила университет и получила диплом специалиста.
 После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
 Семейное положение – не замужем. После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
-Семейное положение – не замужем.</mutableString>
+Семейное положение – не замужем.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -569,11 +570,11 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDz-5Q-WAu" userLabel="Text">
                                         <rect key="frame" x="8" y="263" width="375" height="644.5"/>
-                                        <mutableString key="text">Я, Сергеева Елена Анатольевна, родилась 25 июня 1984 года в г. Люберцы Московской области.
+                                        <string key="text">Я, Сергеева Елена Анатольевна, родилась 25 июня 1984 года в г. Люберцы Московской области.
 В 1991 году была зачислена в 1-ый класс средней общеобразовательной школы №123 г. Москвы. В 2001 году окончила эту школу с серебряной медалью. В этом же году поступила в Московский государственный областной университет на экономический факультет, специальность - «Менеджмент организации». В 2006 году окончила университет и получила диплом специалиста.
 После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
 Семейное положение – не замужем. После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
-Семейное положение – не замужем.</mutableString>
+Семейное положение – не замужем.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -676,11 +677,11 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP0-jK-amt" userLabel="Text">
                                         <rect key="frame" x="8" y="324" width="375" height="644.5"/>
-                                        <mutableString key="text">Я, Сергеева Елена Анатольевна, родилась 25 июня 1984 года в г. Люберцы Московской области.
+                                        <string key="text">Я, Сергеева Елена Анатольевна, родилась 25 июня 1984 года в г. Люберцы Московской области.
 В 1991 году была зачислена в 1-ый класс средней общеобразовательной школы №123 г. Москвы. В 2001 году окончила эту школу с серебряной медалью. В этом же году поступила в Московский государственный областной университет на экономический факультет, специальность - «Менеджмент организации». В 2006 году окончила университет и получила диплом специалиста.
 После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
 Семейное положение – не замужем. После окончания университета работала оператором в ОАО "Билайн". С августа 2007 года работаю менеджером по логистике в ООО «Ремеер».
-Семейное положение – не замужем.</mutableString>
+Семейное положение – не замужем.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
