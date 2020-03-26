@@ -26,10 +26,6 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func classButtonTapped(_ sender: UIButton) {
-        NetworkManager().getData {(fetchedInfo) in
-            print(fetchedInfo)
-        }
-        print(NetworkManager().studentsNames)
     }
     //unwind segue от экранов Profile и Students к Main экрану
   @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {}

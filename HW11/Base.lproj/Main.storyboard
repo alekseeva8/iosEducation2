@@ -207,7 +207,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="563-Wh-zBS" userLabel="nameLabel">
-                                        <rect key="frame" x="141" y="276" width="67" height="32"/>
+                                        <rect key="frame" x="141" y="276" width="93" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="pOC-iL-q3I"/>
                                         </constraints>
@@ -254,6 +254,7 @@
                                     <constraint firstItem="PeJ-N4-TB7" firstAttribute="centerX" secondItem="qlR-nL-HCm" secondAttribute="centerX" id="IrF-Tt-lRd"/>
                                     <constraint firstItem="qlR-nL-HCm" firstAttribute="bottom" secondItem="Ymj-3J-pkv" secondAttribute="bottom" constant="7" id="TJE-kZ-qa4"/>
                                     <constraint firstItem="qlR-nL-HCm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="563-Wh-zBS" secondAttribute="trailing" symbolic="YES" id="UhT-f2-wUy"/>
+                                    <constraint firstItem="563-Wh-zBS" firstAttribute="centerX" secondItem="koI-vS-QI0" secondAttribute="centerX" id="Zcr-u0-YQz"/>
                                     <constraint firstItem="563-Wh-zBS" firstAttribute="leading" secondItem="PeJ-N4-TB7" secondAttribute="leading" id="cKA-ed-Tri"/>
                                     <constraint firstItem="yDb-mZ-bbL" firstAttribute="top" secondItem="qlR-nL-HCm" secondAttribute="top" constant="58" id="f10-lP-W3X"/>
                                     <constraint firstItem="Ymj-3J-pkv" firstAttribute="leading" secondItem="qlR-nL-HCm" secondAttribute="leading" constant="8" id="ghY-WX-B6L"/>

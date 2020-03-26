@@ -7,12 +7,13 @@
 //
 
 import UIKit
+// swiftlint:disable all
 
 class CollectionViewController: UIViewController {
-    
-    let dataSourceOfCV = DataSource()
-    var students = DataSource().students
-    
+    let networkManager = NetworkManager()
+    //swPeople будет содержать полученные данные
+    var swPeople: SWPeople? = nil
+
     var collectionView: UICollectionView
     @IBOutlet weak var labelStudents: UILabel!
     
@@ -29,10 +30,16 @@ class CollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         view.addSubview(collectionView)
         
-        collectionView.dataSource = dataSourceOfCV
+        collectionView.dataSource = self
         collectionView.delegate = self
+
+        networkManager.getData {(data, error) in
+            self.swPeople = data
+            self.collectionView.reloadData()
+            }
         
         collectionView.backgroundColor = .yellow
         collectionView.showsHorizontalScrollIndicator = false
@@ -46,6 +53,7 @@ class CollectionViewController: UIViewController {
         //collectionView.heightAnchor.constraint(lessThanOrEqualToConstant: 350).isActive = true
         //collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
     }
+
          @IBAction func unwindToStudentsList(unwindSegue: UIStoryboardSegue) {}
 }
 
@@ -54,17 +62,41 @@ class CollectionViewController: UIViewController {
         let itemWidth = (UIScreen.main.bounds.width - 20 - 20 - 10/2)/2
         return CGSize(width: itemWidth, height: 300)
     }
+
     //метод говорит делегату, какой выбран пользователем ряд (нажатием на ряд пользователем). здесь можно модифицировать ряд
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
-                   ProfileManager.shared.name = students[indexPath.row].name
-                   ProfileManager.shared.surname = students[indexPath.row].surname
+                   ProfileManager.shared.name = swPeople?.people[indexPath.row].name ?? ""
+                   performSegue(withIdentifier: "profile2VC", sender: nil)
         //загружаются разные стили профилей в зависимости от пола студента
-                switch students[indexPath.row].gender {
-                case .male:
-                    performSegue(withIdentifier: "profile3VC", sender: nil)
-                case .female:
-                    performSegue(withIdentifier: "profile2VC", sender: nil)
+//                switch students[indexPath.row].gender {
+//                case .male:
+//                    performSegue(withIdentifier: "profile3VC", sender: nil)
+//                case .female:
+//                    performSegue(withIdentifier: "profile2VC", sender: nil)
+//    }
     }
+}
+
+extension CollectionViewController: UICollectionViewDataSource {
+
+    //2 обязательные функции DataSource
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return swPeople?.people.count ?? 0
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StudentCollectionViewCell.reuseID, for: indexPath) as! StudentCollectionViewCell
+        cell.studentImageView.image = UIImage(named: "girl")!
+        cell.nameLabel.text = swPeople?.people[indexPath.row].name
+
+        cell.backgroundColor = .white
+        cell.layer.cornerRadius = 5
+        cell.layer.shadowRadius = 9
+        //прозрачность тени
+        cell.layer.shadowOpacity = 0.3
+        //насколько отдаляется тень
+        cell.layer.shadowOffset = CGSize(width: 5, height: 8)
+        cell.clipsToBounds = false
+        return cell
     }
 }

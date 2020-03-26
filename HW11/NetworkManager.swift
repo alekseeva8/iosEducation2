@@ -14,47 +14,29 @@ class NetworkManager {
 //    private init() {
 //       }
 
-    var studentsNames: [String] = []
-
-    struct SWPeople: Codable {
-//        let count: Int
-        let people: [SWPerson]
-
-        enum CodingKeys: String, CodingKey {
-//        case count
-        case people = "results"
-            }
-    }
-
-    struct SWPerson: Codable {
-        let name: String
-        let gender: String
-    }
-
-    func getData(completion: @escaping (NetworkManager.SWPeople) -> Void) {
+    func getData(completion: @escaping (SWPeople?, Error?) -> Void) {
         guard let url = URL(string: "https://swapi.co/api/people") else {return}
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else {return}
-            print(data)
-            //сюда прописать обработку ошибок: вывод для пользователя информации по ошибке
-             guard error == nil else {return}
-//            if let error = error {
-//                    print(error)
-//                }
-//            do {
-            if let json = try? JSONDecoder().decode(SWPeople.self, from: data) {
-                print(json)
-                completion(json)
-                json.people.forEach { (one) in
-//                    print(one.name)
-//                    print(one.gender)
-                self.studentsNames.append(one.name)
+            //выполняем на основном потоке, в приоритете
+            DispatchQueue.main.async {
+                if let error = error {
+                    print(error)
+                    completion(nil, error)
+                    return
+                }
+                guard let data = data else {return}
+                do {
+                    let json = try JSONDecoder().decode(SWPeople.self, from: data)
+                    completion(json, nil)
+//            print(json)
+                json.people.forEach {
+                    print($0.name)
+                    }
+                } catch let jsonError {
+                print(jsonError)
+                completion(nil, jsonError)
                 }
             }
-//                } catch {
-//                print(error)
-//            }
-
             }
         task.resume()
     }
