@@ -12,11 +12,19 @@ import UIKit
 class ProfileManager {
     //singleton
     static let shared = ProfileManager()
-        var login: String = ""
-        var password: String = ""
+        var login = ""
+        var password = ""
         var name = ""
         var surname = ""
-    
+
+        var height = ""
+        var weight = ""
+        var hairColor = ""
+        var skinColor = ""
+        var eyeColor = ""
+        var birthYear = ""
+        var gender = ""
+
     private init() {
     }
 }

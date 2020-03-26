@@ -16,7 +16,7 @@ struct Student {
     var image: UIImage
 
     enum Gender {
-    case male, female
+    case male, female, none
 }
     init(name: String, surname: String, gender: Gender, image: UIImage) {
         self.name = name

@@ -66,15 +66,25 @@ class CollectionViewController: UIViewController {
     //метод говорит делегату, какой выбран пользователем ряд (нажатием на ряд пользователем). здесь можно модифицировать ряд
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
-                   ProfileManager.shared.name = swPeople?.people[indexPath.row].name ?? ""
-                   performSegue(withIdentifier: "profile2VC", sender: nil)
+        ProfileManager.shared.name = swPeople?.people[indexPath.row].name ?? ""
+        ProfileManager.shared.height = swPeople?.people[indexPath.row].height ?? ""
+        ProfileManager.shared.weight = swPeople?.people[indexPath.row].mass ?? ""
+//        ProfileManager.shared.hairColor = swPeople?.people[indexPath.row].hairColor ?? ""
+//        ProfileManager.shared.skinColor = swPeople?.people[indexPath.row].skin_color ?? ""
+//        ProfileManager.shared.eyeColor = swPeople?.people[indexPath.row].eye_color ?? ""
+//        ProfileManager.shared.birthYear = swPeople?.people[indexPath.row].birth_year ?? ""
+        ProfileManager.shared.gender = swPeople?.people[indexPath.row].gender ?? ""
+
         //загружаются разные стили профилей в зависимости от пола студента
-//                switch students[indexPath.row].gender {
-//                case .male:
-//                    performSegue(withIdentifier: "profile3VC", sender: nil)
-//                case .female:
-//                    performSegue(withIdentifier: "profile2VC", sender: nil)
-//    }
+        if swPeople?.people[indexPath.row].gender == "male" {
+            performSegue(withIdentifier: "profile3VC", sender: nil)
+        }
+        if swPeople?.people[indexPath.row].gender == "female" {
+            performSegue(withIdentifier: "profile2VC", sender: nil)
+        }
+        if swPeople?.people[indexPath.row].gender == "n/a" {
+            performSegue(withIdentifier: "profileVC", sender: nil)
+        }
     }
 }
 
@@ -86,7 +96,17 @@ extension CollectionViewController: UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StudentCollectionViewCell.reuseID, for: indexPath) as! StudentCollectionViewCell
-        cell.studentImageView.image = UIImage(named: "girl")!
+        //изображения в ячейках в зависимости от пола
+        if swPeople?.people[indexPath.row].gender == "male" {
+            cell.studentImageView.image = UIImage(named: "boy")!
+        }
+        if swPeople?.people[indexPath.row].gender == "female" {
+            cell.studentImageView.image = UIImage(named: "girl")!
+        }
+        if swPeople?.people[indexPath.row].gender == "n/a" {
+            cell.studentImageView.image = UIImage(named: "user")!
+        }
+
         cell.nameLabel.text = swPeople?.people[indexPath.row].name
 
         cell.backgroundColor = .white

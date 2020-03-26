@@ -19,5 +19,9 @@ struct SWPeople: Codable {
 }
 struct SWPerson: Codable {
     let name: String
+    let height: String
+    let mass: String
     let gender: String
+
+
 }

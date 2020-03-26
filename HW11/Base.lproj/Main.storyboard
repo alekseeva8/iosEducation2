@@ -130,7 +130,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Profile"/>
                                         <connections>
-                                            <segue destination="dAt-BV-dmC" kind="presentation" modalPresentationStyle="fullScreen" id="cIP-oJ-LYt"/>
+                                            <segue destination="dAt-BV-dmC" kind="presentation" id="cIP-oJ-LYt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwn-Sd-yN5" userLabel="classButton">
@@ -173,11 +173,11 @@
             <objects>
                 <viewController id="dAt-BV-dmC" customClass="ProfileViewController" customModule="HW11" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Stz-7p-5eT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koI-vS-QI0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymj-3J-pkv" userLabel="Text">
                                         <rect key="frame" x="8" y="356" width="375" height="95.5"/>
@@ -328,8 +328,9 @@
                     </view>
                     <connections>
                         <outlet property="labelStudents" destination="SOe-fx-jbh" id="7bg-c6-qOr"/>
-                        <segue destination="lk9-TH-Imb" kind="presentation" identifier="profile2VC" modalPresentationStyle="fullScreen" id="HVX-ip-nIE"/>
-                        <segue destination="b6Q-2A-pjO" kind="presentation" identifier="profile3VC" modalPresentationStyle="fullScreen" id="JCt-QH-XOF"/>
+                        <segue destination="lk9-TH-Imb" kind="presentation" identifier="profile2VC" id="HVX-ip-nIE"/>
+                        <segue destination="b6Q-2A-pjO" kind="presentation" identifier="profile3VC" id="JCt-QH-XOF"/>
+                        <segue destination="dAt-BV-dmC" kind="presentation" identifier="profileVC" id="imG-vx-WlO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rd1-iq-GNy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -560,11 +561,11 @@
             <objects>
                 <viewController id="lk9-TH-Imb" userLabel="Profile2" customClass="Profile2ViewController" customModule="HW11" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nCb-eS-dXp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4j-QO-obC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDz-5Q-WAu" userLabel="Text">
                                         <rect key="frame" x="8" y="263" width="375" height="95.5"/>
@@ -664,11 +665,11 @@
             <objects>
                 <viewController id="b6Q-2A-pjO" userLabel="Profile3" customClass="Profile3ViewController" customModule="HW11" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JOp-hH-SvL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uR6-FV-YqA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP0-jK-amt" userLabel="Text">
                                         <rect key="frame" x="8" y="324" width="375" height="95.5"/>
@@ -756,6 +757,7 @@
                     <connections>
                         <outlet property="profileNameLabel" destination="zjk-XK-xIB" id="pKc-zK-AQA"/>
                         <outlet property="profileSurnameLabel" destination="HK7-Dx-10s" id="e8L-Wk-3vN"/>
+                        <outlet property="textLabel" destination="hP0-jK-amt" id="GMN-tf-mJz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCZ-nI-hcd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -773,6 +775,7 @@
         <image name="webinar" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cIP-oJ-LYt"/>
         <segue reference="9Wl-X5-pJJ"/>
     </inferredMetricsTieBreakers>
 </document>
