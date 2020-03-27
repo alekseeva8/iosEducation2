@@ -24,6 +24,9 @@ class MainViewController: UIViewController {
         classButton.layer.cornerRadius = 5
         welcomeLabel.text = "Welcome, \(ProfileManager.shared.login)!"
     }
+    
+    @IBAction func classButtonTapped(_ sender: UIButton) {
+    }
     //unwind segue от экранов Profile и Students к Main экрану
   @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {}
 

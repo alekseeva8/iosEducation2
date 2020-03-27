@@ -23,6 +23,8 @@ class ProfileViewController: UIViewController {
         imageOfProfile.layer.borderColor = UIColor.black.cgColor
         profileNameLabel.text = ProfileManager.shared.name
         profileSurnameLabel.text = ProfileManager.shared.surname
+        studDescriptionLabel.text = "Height: \(ProfileManager.shared.height)\nWeight: \(ProfileManager.shared.weight)\nGender: \(ProfileManager.shared.gender)"
+
         //кнопка
         button.backgroundColor = .yellow
         //self.view.addSubview(button)
@@ -36,6 +38,7 @@ class ProfileViewController: UIViewController {
         super.viewDidAppear(animated)
         animateToCircle()
     }
+
     @IBAction func buttonPressed(_ sender: UIButton) {
         sender.tag += 1
         if sender.tag > 3 {sender.tag = 0}

@@ -11,9 +11,12 @@ import UIKit
 class Profile3ViewController: UIViewController {
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var profileSurnameLabel: UILabel!
+    @IBOutlet weak var textLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         profileNameLabel.text = ProfileManager.shared.name
         profileSurnameLabel.text = ProfileManager.shared.surname
+        textLabel.text = "Height: \(ProfileManager.shared.height)\nWeight: \(ProfileManager.shared.weight)\nGender: \(ProfileManager.shared.gender)"
     }
 }
