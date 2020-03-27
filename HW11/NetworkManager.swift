@@ -16,7 +16,11 @@ class NetworkManager {
 
     func getData(completion: @escaping (SWPeople?, Error?) -> Void) {
         guard let url = URL(string: "https://swapi.co/api/people") else {return}
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        //let task = URLSession.shared.dataTask(with: request)
+
+        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
             //выполняем на основном потоке, в приоритете
             DispatchQueue.main.async {
                 if let error = error {

@@ -22,6 +22,13 @@ struct SWPerson: Codable {
     let height: String
     let mass: String
     let gender: String
+    let hairColor: String
 
-
+    enum CodingKeys: String, CodingKey {
+    case name
+    case height
+    case mass
+    case gender
+    case hairColor = "hair_color"
+    }
 }
