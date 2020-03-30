@@ -14,11 +14,20 @@ class NetworkManager {
 //    private init() {
 //       }
 
-    func getData(completion: @escaping (SWPeople?, Error?) -> Void) {
-        guard let url = URL(string: "https://swapi.co/api/people") else {return}
-        var request = URLRequest(url: url)
+    func getData(urlSuffix: Int, completion: @escaping (SWPeople?, Error?) -> Void) {
+        guard let url = URL(string: "https://swapi.co/api/people/?page=\(urlSuffix)") else {return}
+        //добовляем компоненты
+        var components = URLComponents()
+        components.path = url.path
+        components.scheme = url.scheme
+        components.host = url.host
+        components.queryItems = [
+            URLQueryItem(name: "page", value: String(urlSuffix))
+        ]
+
+        var request = URLRequest(url: components.url!)
         request.httpMethod = "GET"
-        //let task = URLSession.shared.dataTask(with: request)
+        //let task = URLSession.shared.dataTask(with: url)
 
         let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
             //выполняем на основном потоке, в приоритете

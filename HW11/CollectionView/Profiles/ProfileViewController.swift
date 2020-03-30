@@ -17,13 +17,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     //var trailing: NSLayoutConstraint?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         imageOfProfile.layer.borderWidth = 1
         imageOfProfile.layer.borderColor = UIColor.black.cgColor
         profileNameLabel.text = ProfileManager.shared.name
         profileSurnameLabel.text = ProfileManager.shared.surname
-        studDescriptionLabel.text = "Height: \(ProfileManager.shared.height)\nWeight: \(ProfileManager.shared.weight)\nGender: \(ProfileManager.shared.gender)"
+        studDescriptionLabel.text = "Height: \(ProfileManager.shared.height)\nWeight: \(ProfileManager.shared.weight)\nGender: \(ProfileManager.shared.gender)\nHair color: \(ProfileManager.shared.hairColor)\nSkin color: \(ProfileManager.shared.skinColor)\nEye color: \(ProfileManager.shared.eyeColor)\nBirth year: \(ProfileManager.shared.birthYear)"
 
         //кнопка
         button.backgroundColor = .yellow
@@ -78,7 +79,7 @@ class ProfileViewController: UIViewController {
             button.backgroundColor = .green
             }
         }
-    //функция: кнопка улетает за экран
+    //функция: кнопка улетается за экран
     func animateButton3() {
         //вар1 - использование constraints
 //        trailing?.constant = -100

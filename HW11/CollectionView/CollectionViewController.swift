@@ -10,6 +10,7 @@ import UIKit
 // swiftlint:disable all
 
 class CollectionViewController: UIViewController {
+    let dataSourceFromNet = DataSourceFromNet()
     let networkManager = NetworkManager()
     //swPeople будет содержать полученные данные
     var swPeople: SWPeople? = nil
@@ -33,14 +34,17 @@ class CollectionViewController: UIViewController {
 
         view.addSubview(collectionView)
         
-        collectionView.dataSource = self
+        collectionView.dataSource = dataSourceFromNet
         collectionView.delegate = self
 
-        networkManager.getData {(data, error) in
+        networkManager.getData(urlSuffix: 1) {(data, error) in
             self.swPeople = data
             self.collectionView.reloadData()
             }
-        
+
+//        dataSourceFromNet.fetchData()
+//        collectionView.reloadData()
+
         collectionView.backgroundColor = .yellow
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,10 +73,10 @@ class CollectionViewController: UIViewController {
         ProfileManager.shared.name = swPeople?.people[indexPath.row].name ?? ""
         ProfileManager.shared.height = swPeople?.people[indexPath.row].height ?? ""
         ProfileManager.shared.weight = swPeople?.people[indexPath.row].mass ?? ""
-//        ProfileManager.shared.hairColor = swPeople?.people[indexPath.row].hairColor ?? ""
-//        ProfileManager.shared.skinColor = swPeople?.people[indexPath.row].skin_color ?? ""
-//        ProfileManager.shared.eyeColor = swPeople?.people[indexPath.row].eye_color ?? ""
-//        ProfileManager.shared.birthYear = swPeople?.people[indexPath.row].birth_year ?? ""
+        ProfileManager.shared.hairColor = swPeople?.people[indexPath.row].hairColor ?? ""
+        ProfileManager.shared.skinColor = swPeople?.people[indexPath.row].skinColor ?? ""
+        ProfileManager.shared.eyeColor = swPeople?.people[indexPath.row].eyeColor ?? ""
+        ProfileManager.shared.birthYear = swPeople?.people[indexPath.row].birthYear ?? ""
         ProfileManager.shared.gender = swPeople?.people[indexPath.row].gender ?? ""
 
         //загружаются разные стили профилей в зависимости от пола студента
@@ -88,35 +92,35 @@ class CollectionViewController: UIViewController {
     }
 }
 
-extension CollectionViewController: UICollectionViewDataSource {
-
-    //2 обязательные функции DataSource
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return swPeople?.people.count ?? 0
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StudentCollectionViewCell.reuseID, for: indexPath) as! StudentCollectionViewCell
-        //изображения в ячейках в зависимости от пола
-        if swPeople?.people[indexPath.row].gender == "male" {
-            cell.studentImageView.image = UIImage(named: "boy")!
-        }
-        if swPeople?.people[indexPath.row].gender == "female" {
-            cell.studentImageView.image = UIImage(named: "girl")!
-        }
-        if swPeople?.people[indexPath.row].gender == "n/a" {
-            cell.studentImageView.image = UIImage(named: "user")!
-        }
-
-        cell.nameLabel.text = swPeople?.people[indexPath.row].name
-
-        cell.backgroundColor = .white
-        cell.layer.cornerRadius = 5
-        cell.layer.shadowRadius = 9
-        //прозрачность тени
-        cell.layer.shadowOpacity = 0.3
-        //насколько отдаляется тень
-        cell.layer.shadowOffset = CGSize(width: 5, height: 8)
-        cell.clipsToBounds = false
-        return cell
-    }
-}
+//extension CollectionViewController: UICollectionViewDataSource {
+//
+//    //2 обязательные функции DataSource
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return swPeople?.people.count ?? 0
+//    }
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StudentCollectionViewCell.reuseID, for: indexPath) as! StudentCollectionViewCell
+//        //изображения в ячейках в зависимости от пола
+//        if swPeople?.people[indexPath.row].gender == "male" {
+//            cell.studentImageView.image = UIImage(named: "boy")!
+//        }
+//        if swPeople?.people[indexPath.row].gender == "female" {
+//            cell.studentImageView.image = UIImage(named: "girl")!
+//        }
+//        if swPeople?.people[indexPath.row].gender == "n/a" {
+//            cell.studentImageView.image = UIImage(named: "user")!
+//        }
+//
+//        cell.nameLabel.text = swPeople?.people[indexPath.row].name
+//
+//        cell.backgroundColor = .white
+//        cell.layer.cornerRadius = 5
+//        cell.layer.shadowRadius = 9
+//        //прозрачность тени
+//        cell.layer.shadowOpacity = 0.3
+//        //насколько отдаляется тень
+//        cell.layer.shadowOffset = CGSize(width: 5, height: 8)
+//        cell.clipsToBounds = false
+//        return cell
+//    }
+//}

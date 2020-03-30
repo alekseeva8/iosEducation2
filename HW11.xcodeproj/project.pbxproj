@@ -30,6 +30,7 @@
 		F36F63BF23FAAF6F00FEB355 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36F63BE23FAAF6F00FEB355 /* ProfileViewController.swift */; };
 		F3726D37242BA73000C37F00 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726D36242BA73000C37F00 /* NetworkManager.swift */; };
 		F3726D5F242CE83C00C37F00 /* SWPeople.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726D5E242CE83C00C37F00 /* SWPeople.swift */; };
+		F3726D612431C39000C37F00 /* DataSourceFromNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3726D602431C39000C37F00 /* DataSourceFromNet.swift */; };
 		F3D0F8E4241912A1000A9D0A /* Profile2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0F8E3241912A1000A9D0A /* Profile2ViewController.swift */; };
 		F3D0F8E62419188E000A9D0A /* Profile3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0F8E52419188E000A9D0A /* Profile3ViewController.swift */; };
 		F3D0F8EC241BEB8E000A9D0A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D0F8EB241BEB8E000A9D0A /* ViewController.xib */; };
@@ -65,6 +66,7 @@
 		F36F63BE23FAAF6F00FEB355 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F3726D36242BA73000C37F00 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F3726D5E242CE83C00C37F00 /* SWPeople.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPeople.swift; sourceTree = "<group>"; };
+		F3726D602431C39000C37F00 /* DataSourceFromNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceFromNet.swift; sourceTree = "<group>"; };
 		F3D0F8E3241912A1000A9D0A /* Profile2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile2ViewController.swift; sourceTree = "<group>"; };
 		F3D0F8E52419188E000A9D0A /* Profile3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile3ViewController.swift; sourceTree = "<group>"; };
 		F3D0F8EB241BEB8E000A9D0A /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				F3547C3C2422720E00820800 /* StudentCollectionViewCell.swift */,
 				F3547C3A242254CD00820800 /* CollectionViewController.swift */,
 				F3547C4624235B3200820800 /* DataSource.swift */,
+				F3726D602431C39000C37F00 /* DataSourceFromNet.swift */,
 				F3547C4824235B9E00820800 /* Profiles */,
 			);
 			path = CollectionView;
@@ -352,6 +355,7 @@
 				F36F63B923FA790D00FEB355 /* SignInViewController.swift in Sources */,
 				F3726D5F242CE83C00C37F00 /* SWPeople.swift in Sources */,
 				F36F63A923FA771900FEB355 /* ViewController.swift in Sources */,
+				F3726D612431C39000C37F00 /* DataSourceFromNet.swift in Sources */,
 				F31495E9240D0AFD005E7865 /* Student.swift in Sources */,
 				F3FABC9C23FFE14100CD77B2 /* ProfileManager.swift in Sources */,
 				F36F63A523FA771900FEB355 /* AppDelegate.swift in Sources */,

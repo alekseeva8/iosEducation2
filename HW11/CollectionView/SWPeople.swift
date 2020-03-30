@@ -8,6 +8,9 @@
 
 import Foundation
 
+//protocol MyProtocol{
+//}
+
 struct SWPeople: Codable {
     let count: Int
     let people: [SWPerson]
@@ -18,11 +21,9 @@ struct SWPeople: Codable {
     }
 }
 struct SWPerson: Codable {
-    let name: String
-    let height: String
-    let mass: String
-    let gender: String
-    let hairColor: String
+    let name, height, mass, gender, hairColor, skinColor, eyeColor, birthYear: String
+    //let vehicles: String
+    //let starships: String
 
     enum CodingKeys: String, CodingKey {
     case name
@@ -30,5 +31,13 @@ struct SWPerson: Codable {
     case mass
     case gender
     case hairColor = "hair_color"
+    case skinColor = "skin_color"
+    case eyeColor = "eye_color"
+    case birthYear = "birth_year"
+    //case vehicles
+    //case starships
     }
 }
+
+//struct Starhip {
+//}

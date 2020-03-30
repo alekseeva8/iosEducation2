@@ -16,11 +16,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        profileButton.layer.borderColor = UIColor.systemBlue.cgColor
-//        profileButton.layer.borderWidth = 1
         profileButton.layer.cornerRadius = 5
-//        classButton.layer.borderColor = UIColor.systemBlue.cgColor
-//        classButton.layer.borderWidth = 1
         classButton.layer.cornerRadius = 5
         welcomeLabel.text = "Welcome, \(ProfileManager.shared.login)!"
     }

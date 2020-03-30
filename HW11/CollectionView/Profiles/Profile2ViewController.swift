@@ -18,6 +18,6 @@ class Profile2ViewController: UIViewController {
             super.viewDidLoad()
             profileNameLabel.text = ProfileManager.shared.name
             profileSurnameLabel.text = ProfileManager.shared.surname
-            textLabel.text = "Height: \(ProfileManager.shared.height)\nWeight: \(ProfileManager.shared.weight)\nGender: \(ProfileManager.shared.gender)"
+            textLabel.text = "Height: \(ProfileManager.shared.height)\nWeight: \(ProfileManager.shared.weight)\nGender: \(ProfileManager.shared.gender)\nHair color: \(ProfileManager.shared.hairColor)\nSkin color: \(ProfileManager.shared.skinColor)\nEye color: \(ProfileManager.shared.eyeColor)\nBirth year: \(ProfileManager.shared.birthYear)"
         }
 }
