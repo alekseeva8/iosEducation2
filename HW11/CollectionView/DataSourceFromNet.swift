@@ -14,12 +14,6 @@ class DataSourceFromNet: NSObject, UICollectionViewDataSource {
     let networkManager = NetworkManager()
     //swPeople будет содержать полученные данные
     var swPeople: SWPeople? = nil
-//    func fetchData() {
-//        networkManager.getData(urlSuffix: 1) {(data, error) in
-//                   self.swPeople = data
-//                   self.collectionView.reloadData()
-//                   }
-//    }
 
         //2 обязательные функции DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

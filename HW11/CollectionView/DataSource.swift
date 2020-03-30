@@ -27,8 +27,6 @@ class DataSource: NSObject, UICollectionViewDataSource {
         cell.nameLabel.text = students[indexPath.row].name
         cell.surnameLabel.text = students[indexPath.row].surname
         cell.backgroundColor = .white
-        //cell.layer.borderWidth = 1
-        //cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.cornerRadius = 5
         cell.layer.shadowRadius = 9
         //прозрачность тени

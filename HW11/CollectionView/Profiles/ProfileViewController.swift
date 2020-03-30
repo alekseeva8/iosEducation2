@@ -47,7 +47,7 @@ class ProfileViewController: UIViewController {
         case 1: animateButton()
         case 2: animateButton2()
         case 3: animateButton3()
-        default: print("123")
+        default: print("")
         }
     }
     //преобразование картинки в круглую
