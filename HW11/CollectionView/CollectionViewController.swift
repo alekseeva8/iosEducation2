@@ -10,7 +10,7 @@ import UIKit
 // swiftlint:disable all
 
 class CollectionViewController: UIViewController {
-    let dataSourceFromNet = DataSourceFromNet()
+    //let dataSourceFromNet = DataSourceFromNet()
 
     var collectionView: UICollectionView
     @IBOutlet weak var labelStudents: UILabel!
@@ -30,11 +30,11 @@ class CollectionViewController: UIViewController {
 
         view.addSubview(collectionView)
         collectionViewLayout()
-        collectionView.dataSource = dataSourceFromNet
+        collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: StudentCollectionViewCell.reuseID)
 
-        NetworkManager.shared.getData(urlSuffix: 1) {[weak self] in
+        NetworkManager.shared.getData {[weak self] in
             self?.collectionView.reloadData()
             }
     }
@@ -48,22 +48,23 @@ extension CollectionViewController: UICollectionViewDataSource {
 
     //2 обязательные функции DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return NetworkManager.shared.swPeople?.people.count ?? 0
+        return NetworkManager.shared.swPeopleArray.count
+        
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StudentCollectionViewCell.reuseID, for: indexPath) as! StudentCollectionViewCell
         //изображения в ячейках в зависимости от пола
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "male" {
+    if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "male" {
             cell.studentImageView.image = UIImage(named: "boy")!
         }
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "female" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "female" {
             cell.studentImageView.image = UIImage(named: "girl")!
         }
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "n/a" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "n/a" {
             cell.studentImageView.image = UIImage(named: "user")!
         }
 
-        cell.nameLabel.text = NetworkManager.shared.swPeople?.people[indexPath.row].name
+    cell.nameLabel.text = NetworkManager.shared.swPeopleArray[indexPath.row].name
         addingCollectionViewDesign(cell: cell)
 
         return cell
@@ -104,27 +105,27 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDe
         let itemWidth = (UIScreen.main.bounds.width - 20 - 20 - 10/2)/2
         return CGSize(width: itemWidth, height: 300)
     }
-
+//MARK: - DidSelect method
     //метод говорит делегату, какой выбран пользователем ряд (нажатием на ряд пользователем). здесь можно модифицировать ряд
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
-        ProfileManager.shared.name = NetworkManager.shared.swPeople?.people[indexPath.row].name ?? ""
-        ProfileManager.shared.height = NetworkManager.shared.swPeople?.people[indexPath.row].height ?? ""
-        ProfileManager.shared.weight = NetworkManager.shared.swPeople?.people[indexPath.row].mass ?? ""
-        ProfileManager.shared.hairColor = NetworkManager.shared.swPeople?.people[indexPath.row].hairColor ?? ""
-        ProfileManager.shared.skinColor = NetworkManager.shared.swPeople?.people[indexPath.row].skinColor ?? ""
-        ProfileManager.shared.eyeColor = NetworkManager.shared.swPeople?.people[indexPath.row].eyeColor ?? ""
-        ProfileManager.shared.birthYear = NetworkManager.shared.swPeople?.people[indexPath.row].birthYear ?? ""
-        ProfileManager.shared.gender = NetworkManager.shared.swPeople?.people[indexPath.row].gender ?? ""
+        ProfileManager.shared.name = NetworkManager.shared.swPeopleArray[indexPath.row].name
+//        ProfileManager.shared.height = NetworkManager.shared.swPeople?.people[indexPath.row].height ?? ""
+//        ProfileManager.shared.weight = NetworkManager.shared.swPeople?.people[indexPath.row].mass ?? ""
+//        ProfileManager.shared.hairColor = NetworkManager.shared.swPeople?.people[indexPath.row].hairColor ?? ""
+//        ProfileManager.shared.skinColor = NetworkManager.shared.swPeople?.people[indexPath.row].skinColor ?? ""
+//        ProfileManager.shared.eyeColor = NetworkManager.shared.swPeople?.people[indexPath.row].eyeColor ?? ""
+//        ProfileManager.shared.birthYear = NetworkManager.shared.swPeople?.people[indexPath.row].birthYear ?? ""
+        ProfileManager.shared.gender = NetworkManager.shared.swPeopleArray[indexPath.row].gender
 
         //загружаются разные стили профилей в зависимости от пола студента
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "male" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "male" {
             performSegue(withIdentifier: "profile3VC", sender: nil)
         }
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "female" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "female" {
             performSegue(withIdentifier: "profile2VC", sender: nil)
         }
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "n/a" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "n/a" {
             performSegue(withIdentifier: "profileVC", sender: nil)
         }
     }

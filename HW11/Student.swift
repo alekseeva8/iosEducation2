@@ -12,13 +12,13 @@ import UIKit
 struct Student {
     var name: String
     var surname: String
-    var gender: Gender
+    var gender: String
     var image: UIImage
 
-    enum Gender {
-    case male, female, none
-}
-    init(name: String, surname: String, gender: Gender, image: UIImage) {
+//    enum Gender {
+//    case male, female, none
+//}
+    init(name: String, surname: String, gender: String, image: UIImage) {
         self.name = name
         self.surname = surname
         self.gender = gender
