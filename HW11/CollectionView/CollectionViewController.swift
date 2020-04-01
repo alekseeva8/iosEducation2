@@ -60,9 +60,10 @@ extension CollectionViewController: UICollectionViewDataSource {
         if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "female" {
             cell.studentImageView.image = UIImage(named: "girl")!
         }
-        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "n/a" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "n/a" || NetworkManager.shared.swPeopleArray[indexPath.row].gender == "none" {
             cell.studentImageView.image = UIImage(named: "user")!
         }
+
 
     cell.nameLabel.text = NetworkManager.shared.swPeopleArray[indexPath.row].name
         addingCollectionViewDesign(cell: cell)
@@ -110,12 +111,12 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
         ProfileManager.shared.name = NetworkManager.shared.swPeopleArray[indexPath.row].name
-//        ProfileManager.shared.height = NetworkManager.shared.swPeople?.people[indexPath.row].height ?? ""
-//        ProfileManager.shared.weight = NetworkManager.shared.swPeople?.people[indexPath.row].mass ?? ""
-//        ProfileManager.shared.hairColor = NetworkManager.shared.swPeople?.people[indexPath.row].hairColor ?? ""
-//        ProfileManager.shared.skinColor = NetworkManager.shared.swPeople?.people[indexPath.row].skinColor ?? ""
-//        ProfileManager.shared.eyeColor = NetworkManager.shared.swPeople?.people[indexPath.row].eyeColor ?? ""
-//        ProfileManager.shared.birthYear = NetworkManager.shared.swPeople?.people[indexPath.row].birthYear ?? ""
+        ProfileManager.shared.height = NetworkManager.shared.swPeopleArray[indexPath.row].height
+        ProfileManager.shared.weight = NetworkManager.shared.swPeopleArray[indexPath.row].mass
+        ProfileManager.shared.hairColor = NetworkManager.shared.swPeopleArray[indexPath.row].hairColor
+        ProfileManager.shared.skinColor = NetworkManager.shared.swPeopleArray[indexPath.row].skinColor
+        ProfileManager.shared.eyeColor = NetworkManager.shared.swPeopleArray[indexPath.row].eyeColor
+        ProfileManager.shared.birthYear = NetworkManager.shared.swPeopleArray[indexPath.row].birthYear
         ProfileManager.shared.gender = NetworkManager.shared.swPeopleArray[indexPath.row].gender
 
         //загружаются разные стили профилей в зависимости от пола студента
@@ -125,7 +126,7 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDe
         if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "female" {
             performSegue(withIdentifier: "profile2VC", sender: nil)
         }
-        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "n/a" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "n/a" || NetworkManager.shared.swPeopleArray[indexPath.row].gender == "none" {
             performSegue(withIdentifier: "profileVC", sender: nil)
         }
     }

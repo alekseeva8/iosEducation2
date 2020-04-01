@@ -50,8 +50,9 @@ class NetworkManager {
                                        let json = try JSONDecoder().decode(SWPeople.self, from: data)
         //                               self.swPeople = json
                                        json.people.forEach { (person) in
-                                        self.swPeopleArray.append(Student(name: person.name, surname: "", gender: person.gender, image: UIImage(named: "boy")!))
+                                        self.swPeopleArray.append(Student(name: person.name, surname: "", gender: person.gender, image: UIImage(named: "boy")!, height: person.height, mass: person.mass, hairColor: person.hairColor, skinColor: person.skinColor, eyeColor: person.eyeColor, birthYear: person.birthYear))
                                        }
+
                                        //запуск completion (замыкания, которое обновляет collectionView) обязательновыполним на основном потоке
                                        DispatchQueue.main.async {
                                        completion()
