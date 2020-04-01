@@ -10,11 +10,14 @@ import Foundation
 
 class NetworkManager {
     //singleton
-//    static let shared = NetworkManager()
-//    private init() {
-//       }
+    static let shared = NetworkManager()
+    private init() {
+       }
+    //swPeople будет содержать полученные данные
+    var swPeople: SWPeople?
 
-    func getData(urlSuffix: Int, completion: @escaping (SWPeople?, Error?) -> Void) {
+///Func description
+    func getData(urlSuffix: Int, completion: @escaping () -> Void) {
         guard let url = URL(string: "https://swapi.co/api/people/?page=\(urlSuffix)") else {return}
         //добовляем компоненты
         var components = URLComponents()
@@ -34,20 +37,15 @@ class NetworkManager {
             DispatchQueue.main.async {
                 if let error = error {
                     print(error)
-                    completion(nil, error)
-                    return
                 }
                 guard let data = data else {return}
                 do {
                     let json = try JSONDecoder().decode(SWPeople.self, from: data)
-                    completion(json, nil)
+                    self.swPeople = json
+                    completion()
 //            print(json)
-                json.people.forEach {
-                    print($0.name)
-                    }
                 } catch let jsonError {
                 print(jsonError)
-                completion(nil, jsonError)
                 }
             }
             }

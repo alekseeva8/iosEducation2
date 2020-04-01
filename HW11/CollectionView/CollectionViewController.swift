@@ -7,12 +7,10 @@
 //
 
 import UIKit
+// swiftlint:disable all
 
 class CollectionViewController: UIViewController {
-    //let dataSourceFromNet = DataSourceFromNet()
-    let networkManager = NetworkManager()
-    //swPeople будет содержать полученные данные
-    var swPeople: SWPeople? = nil
+    let dataSourceFromNet = DataSourceFromNet()
 
     var collectionView: UICollectionView
     @IBOutlet weak var labelStudents: UILabel!
@@ -32,13 +30,12 @@ class CollectionViewController: UIViewController {
 
         view.addSubview(collectionView)
         collectionViewLayout()
-        collectionView.dataSource = self
+        collectionView.dataSource = dataSourceFromNet
         collectionView.delegate = self
         collectionView.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: StudentCollectionViewCell.reuseID)
 
-        networkManager.getData(urlSuffix: 1) {(data, error) in
-            self.swPeople = data
-            self.collectionView.reloadData()
+        NetworkManager.shared.getData(urlSuffix: 1) {[weak self] in
+            self?.collectionView.reloadData()
             }
     }
     
@@ -46,4 +43,90 @@ class CollectionViewController: UIViewController {
 }
 
 
-        
+//MARK: - Data Source
+extension CollectionViewController: UICollectionViewDataSource {
+
+    //2 обязательные функции DataSource
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return NetworkManager.shared.swPeople?.people.count ?? 0
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StudentCollectionViewCell.reuseID, for: indexPath) as! StudentCollectionViewCell
+        //изображения в ячейках в зависимости от пола
+        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "male" {
+            cell.studentImageView.image = UIImage(named: "boy")!
+        }
+        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "female" {
+            cell.studentImageView.image = UIImage(named: "girl")!
+        }
+        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "n/a" {
+            cell.studentImageView.image = UIImage(named: "user")!
+        }
+
+        cell.nameLabel.text = NetworkManager.shared.swPeople?.people[indexPath.row].name
+        addingCollectionViewDesign(cell: cell)
+
+        return cell
+    }
+
+    func addingCollectionViewDesign(cell: StudentCollectionViewCell) {
+          cell.backgroundColor = .white
+          cell.layer.cornerRadius = 5
+          cell.layer.shadowRadius = 9
+          //прозрачность тени
+          cell.layer.shadowOpacity = 0.3
+          //насколько отдаляется тень
+          cell.layer.shadowOffset = CGSize(width: 5, height: 8)
+              cell.clipsToBounds = false
+    }
+}
+
+//MARK: - Layout
+extension CollectionViewController {
+    func collectionViewLayout() {
+        collectionView.backgroundColor = .yellow
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+         //чтобы ячейки не доставали до краев collectionview на 20
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: labelStudents.bottomAnchor, constant: 8).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        //collectionView.heightAnchor.constraint(lessThanOrEqualToConstant: 350).isActive = true
+        //collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
+    }
+}
+
+//MARK: - Delegate
+extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemWidth = (UIScreen.main.bounds.width - 20 - 20 - 10/2)/2
+        return CGSize(width: itemWidth, height: 300)
+    }
+
+    //метод говорит делегату, какой выбран пользователем ряд (нажатием на ряд пользователем). здесь можно модифицировать ряд
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
+        ProfileManager.shared.name = NetworkManager.shared.swPeople?.people[indexPath.row].name ?? ""
+        ProfileManager.shared.height = NetworkManager.shared.swPeople?.people[indexPath.row].height ?? ""
+        ProfileManager.shared.weight = NetworkManager.shared.swPeople?.people[indexPath.row].mass ?? ""
+        ProfileManager.shared.hairColor = NetworkManager.shared.swPeople?.people[indexPath.row].hairColor ?? ""
+        ProfileManager.shared.skinColor = NetworkManager.shared.swPeople?.people[indexPath.row].skinColor ?? ""
+        ProfileManager.shared.eyeColor = NetworkManager.shared.swPeople?.people[indexPath.row].eyeColor ?? ""
+        ProfileManager.shared.birthYear = NetworkManager.shared.swPeople?.people[indexPath.row].birthYear ?? ""
+        ProfileManager.shared.gender = NetworkManager.shared.swPeople?.people[indexPath.row].gender ?? ""
+
+        //загружаются разные стили профилей в зависимости от пола студента
+        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "male" {
+            performSegue(withIdentifier: "profile3VC", sender: nil)
+        }
+        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "female" {
+            performSegue(withIdentifier: "profile2VC", sender: nil)
+        }
+        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "n/a" {
+            performSegue(withIdentifier: "profileVC", sender: nil)
+        }
+    }
+    }
+
