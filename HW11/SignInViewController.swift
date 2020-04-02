@@ -22,25 +22,25 @@ class SignInViewController: UIViewController {
         signButton.layer.cornerRadius = 5
 
         //добавление распознования жеста на helloLabel
-//        helloLabel.isUserInteractionEnabled = true
-//        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
-//        helloLabel.addGestureRecognizer(swipeGesture)
-//    }
-//    @objc func swiped(_ sender: Any) {
-//        print("swiped")
-//        helloLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        helloLabel.isUserInteractionEnabled = true
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        helloLabel.addGestureRecognizer(swipeGesture)
+    }
+    @objc func swiped(_ sender: Any) {
+        print("swiped")
+        helloLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
     }
 
 //MARK: - Gesture
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        super.touchesBegan(touches, with: event)
-        helloLabel.textColor = .black
-        helloLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        helloLabel.textColor = .systemBlue
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+//        super.touchesBegan(touches, with: event)
+//        helloLabel.textColor = .black
+//        helloLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+//    }
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        super.touchesEnded(touches, with: event)
+//        helloLabel.textColor = .systemBlue
+//    }
 
 //MARK: - SignInButtonPressed
     @IBAction func signInButtonPressed(_ sender: Any) {
