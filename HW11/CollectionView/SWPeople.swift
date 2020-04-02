@@ -41,4 +41,3 @@ struct SWPerson: Codable {
 
 //struct Starhip {
 //}
-

@@ -14,6 +14,7 @@ class CollectionViewController: UIViewController {
 
     var collectionView: UICollectionView
     @IBOutlet weak var labelStudents: UILabel!
+    let activityIndicator = UIActivityIndicatorView(style: .large)
     
     required init?(coder: NSCoder) {
     //создание collectionView (property viewcontroller) с UICollectionViewFlowLayout (non-customised, build-in layout)
@@ -34,7 +35,12 @@ class CollectionViewController: UIViewController {
         collectionView.delegate = self
         collectionView.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: StudentCollectionViewCell.reuseID)
 
+        collectionView.addSubview(activityIndicator)
+        activityIndicatorLayout()
+        activityIndicator.startAnimating()
+
         NetworkManager.shared.getData {[weak self] in
+            self?.activityIndicator.stopAnimating()
             self?.collectionView.reloadData()
             }
     }
@@ -48,6 +54,9 @@ extension CollectionViewController: UICollectionViewDataSource {
 
     //2 обязательные функции DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if NetworkManager.shared.swPeopleArray.count != 0 {
+            activityIndicator.isHidden = true
+        }
         return NetworkManager.shared.swPeopleArray.count
         
     }
@@ -64,14 +73,13 @@ extension CollectionViewController: UICollectionViewDataSource {
             cell.studentImageView.image = UIImage(named: "user")!
         }
 
-
     cell.nameLabel.text = NetworkManager.shared.swPeopleArray[indexPath.row].name
-        addingCollectionViewDesign(cell: cell)
+        collectionViewDesign(cell: cell)
 
         return cell
     }
 
-    func addingCollectionViewDesign(cell: StudentCollectionViewCell) {
+    func collectionViewDesign(cell: StudentCollectionViewCell) {
           cell.backgroundColor = .white
           cell.layer.cornerRadius = 5
           cell.layer.shadowRadius = 9
@@ -80,6 +88,14 @@ extension CollectionViewController: UICollectionViewDataSource {
           //насколько отдаляется тень
           cell.layer.shadowOffset = CGSize(width: 5, height: 8)
               cell.clipsToBounds = false
+    }
+
+    func activityIndicatorLayout() {
+        activityIndicator.color = .systemBlue
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor).isActive = true
+        activityIndicator.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
+        activityIndicator.hidesWhenStopped = true
     }
 }
 
