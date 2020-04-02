@@ -24,7 +24,7 @@ class NetworkManager {
 ///Func description: выполняется на background thread [однако completion (замыкание, которое обновляет collectionView) выполним на основном потоке]
     func getData(urlFor: NumberOfLoading, completion: @escaping () -> Void) {
         let session = URLSession.shared
-
+//MARK: - First Loading
         switch urlFor {
         case .firstLoading:
             guard let url = URL(string: "https://swapi.co/api/people") else {return}
@@ -47,7 +47,8 @@ class NetworkManager {
                     }
                 }
             task.resume()
-
+            
+//MARK: - Next Loading
         case .nextLoading:
             guard let url2 = URL(string: "https://swapi.co/api/people/?page=2") else {return}
             guard let url3 = URL(string: "https://swapi.co/api/people/?page=3") else {return}

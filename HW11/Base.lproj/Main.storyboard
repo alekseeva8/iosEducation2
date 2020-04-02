@@ -55,7 +55,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello! Join to our class!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVR-az-p18">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello! Join to our class!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVR-az-p18" userLabel="helloLabel">
                                 <rect key="frame" x="63" y="40" width="249" height="30"/>
                                 <color key="backgroundColor" red="0.97576718829999998" green="1" blue="0.55185908309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -87,6 +87,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="helloLabel" destination="nVR-az-p18" id="HgB-cF-aVL"/>
                         <outlet property="loginLabel" destination="x3f-tT-ze1" id="tjm-Oz-3ri"/>
                         <outlet property="loginTextField" destination="AaR-VB-Y4I" id="QOL-4x-kOU"/>
                         <outlet property="passwordLabel" destination="WZ7-rk-xR9" id="CZb-Ug-LnF"/>
@@ -108,12 +109,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="webinar" translatesAutoresizingMaskIntoConstraints="NO" id="Pum-pE-FbM">
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="webinar" translatesAutoresizingMaskIntoConstraints="NO" id="Pum-pE-FbM">
                                 <rect key="frame" x="64" y="20" width="247" height="220"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="247" id="RZF-zB-rJk"/>
                                     <constraint firstAttribute="height" constant="220" id="rmk-kG-t1s"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2uw-L6-rp7" appends="YES" id="8PH-0Z-MLu"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SO-F8-j9d" userLabel="welcomeLabel">
                                 <rect key="frame" x="154.5" y="260" width="66.5" height="33.5"/>
@@ -161,10 +166,16 @@
                     <connections>
                         <outlet property="classButton" destination="dwn-Sd-yN5" id="PCE-t8-9MJ"/>
                         <outlet property="profileButton" destination="8Rp-0a-MhU" id="Z3S-MJ-qQC"/>
+                        <outlet property="webinarImage" destination="Pum-pE-FbM" id="FWy-WJ-RS7"/>
                         <outlet property="welcomeLabel" destination="1SO-F8-j9d" id="0qz-Vw-Rkm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWt-FN-eLX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2uw-L6-rp7">
+                    <connections>
+                        <action selector="handleTapGesture:" destination="ukI-1m-eye" id="g2G-ax-foG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1520.8" y="114.69265367316342"/>
         </scene>

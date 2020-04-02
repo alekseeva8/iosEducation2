@@ -8,9 +8,6 @@
 
 import Foundation
 
-//protocol MyProtocol{
-//}
-
 struct SWPeople: Codable {
     let count: Int
     let people: [SWPerson]
