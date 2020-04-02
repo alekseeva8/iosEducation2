@@ -39,7 +39,8 @@ class CollectionViewController: UIViewController {
         activityIndicatorLayout()
         activityIndicator.startAnimating()
 
-        NetworkManager.shared.getData {[weak self] in
+        //первая загрузка данных
+        NetworkManager.shared.getData(urlFor: .firstLoading) {[weak self] in
             self?.activityIndicator.stopAnimating()
             self?.collectionView.reloadData()
             }
@@ -56,6 +57,10 @@ extension CollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if NetworkManager.shared.swPeopleArray.count != 0 {
             activityIndicator.isHidden = true
+            //дозагрузка данных из сети
+            NetworkManager.shared.getData(urlFor: .nextLoading) {[weak self] in
+                self?.collectionView.reloadData()
+                }
         }
         return NetworkManager.shared.swPeopleArray.count
         
