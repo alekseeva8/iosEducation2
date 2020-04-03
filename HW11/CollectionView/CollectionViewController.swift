@@ -10,10 +10,11 @@ import UIKit
 // swiftlint:disable all
 
 class CollectionViewController: UIViewController {
-    let dataSourceFromNet = DataSourceFromNet()
+    //let dataSourceFromNet = DataSourceFromNet()
 
     var collectionView: UICollectionView
     @IBOutlet weak var labelStudents: UILabel!
+    let activityIndicator = UIActivityIndicatorView(style: .large)
     
     required init?(coder: NSCoder) {
     //создание collectionView (property viewcontroller) с UICollectionViewFlowLayout (non-customised, build-in layout)
@@ -30,11 +31,17 @@ class CollectionViewController: UIViewController {
 
         view.addSubview(collectionView)
         collectionViewLayout()
-        collectionView.dataSource = dataSourceFromNet
+        collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(StudentCollectionViewCell.self, forCellWithReuseIdentifier: StudentCollectionViewCell.reuseID)
 
-        NetworkManager.shared.getData(urlSuffix: 1) {[weak self] in
+        collectionView.addSubview(activityIndicator)
+        activityIndicatorLayout()
+        activityIndicator.startAnimating()
+
+        //первая загрузка данных
+        NetworkManager.shared.getData(urlFor: .firstLoading) {[weak self] in
+            self?.activityIndicator.stopAnimating()
             self?.collectionView.reloadData()
             }
     }
@@ -48,28 +55,36 @@ extension CollectionViewController: UICollectionViewDataSource {
 
     //2 обязательные функции DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return NetworkManager.shared.swPeople?.people.count ?? 0
+        if NetworkManager.shared.swPeopleArray.count != 0 {
+            activityIndicator.isHidden = true
+            //дозагрузка данных из сети
+            NetworkManager.shared.getData(urlFor: .nextLoading) {[weak self] in
+                self?.collectionView.reloadData()
+                }
+        }
+        return NetworkManager.shared.swPeopleArray.count
+        
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StudentCollectionViewCell.reuseID, for: indexPath) as! StudentCollectionViewCell
         //изображения в ячейках в зависимости от пола
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "male" {
+    if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "male" {
             cell.studentImageView.image = UIImage(named: "boy")!
         }
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "female" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "female" {
             cell.studentImageView.image = UIImage(named: "girl")!
         }
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "n/a" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "n/a" || NetworkManager.shared.swPeopleArray[indexPath.row].gender == "none" {
             cell.studentImageView.image = UIImage(named: "user")!
         }
 
-        cell.nameLabel.text = NetworkManager.shared.swPeople?.people[indexPath.row].name
-        addingCollectionViewDesign(cell: cell)
+    cell.nameLabel.text = NetworkManager.shared.swPeopleArray[indexPath.row].name
+        collectionViewDesign(cell: cell)
 
         return cell
     }
 
-    func addingCollectionViewDesign(cell: StudentCollectionViewCell) {
+    func collectionViewDesign(cell: StudentCollectionViewCell) {
           cell.backgroundColor = .white
           cell.layer.cornerRadius = 5
           cell.layer.shadowRadius = 9
@@ -78,6 +93,14 @@ extension CollectionViewController: UICollectionViewDataSource {
           //насколько отдаляется тень
           cell.layer.shadowOffset = CGSize(width: 5, height: 8)
               cell.clipsToBounds = false
+    }
+
+    func activityIndicatorLayout() {
+        activityIndicator.color = .systemBlue
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor).isActive = true
+        activityIndicator.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
+        activityIndicator.hidesWhenStopped = true
     }
 }
 
@@ -104,27 +127,27 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDe
         let itemWidth = (UIScreen.main.bounds.width - 20 - 20 - 10/2)/2
         return CGSize(width: itemWidth, height: 300)
     }
-
+//MARK: - DidSelect method
     //метод говорит делегату, какой выбран пользователем ряд (нажатием на ряд пользователем). здесь можно модифицировать ряд
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //достаем имя студента из ячейки (для дальнейшей передачи в ProfileVC)
-        ProfileManager.shared.name = NetworkManager.shared.swPeople?.people[indexPath.row].name ?? ""
-        ProfileManager.shared.height = NetworkManager.shared.swPeople?.people[indexPath.row].height ?? ""
-        ProfileManager.shared.weight = NetworkManager.shared.swPeople?.people[indexPath.row].mass ?? ""
-        ProfileManager.shared.hairColor = NetworkManager.shared.swPeople?.people[indexPath.row].hairColor ?? ""
-        ProfileManager.shared.skinColor = NetworkManager.shared.swPeople?.people[indexPath.row].skinColor ?? ""
-        ProfileManager.shared.eyeColor = NetworkManager.shared.swPeople?.people[indexPath.row].eyeColor ?? ""
-        ProfileManager.shared.birthYear = NetworkManager.shared.swPeople?.people[indexPath.row].birthYear ?? ""
-        ProfileManager.shared.gender = NetworkManager.shared.swPeople?.people[indexPath.row].gender ?? ""
+        ProfileManager.shared.name = NetworkManager.shared.swPeopleArray[indexPath.row].name
+        ProfileManager.shared.height = NetworkManager.shared.swPeopleArray[indexPath.row].height
+        ProfileManager.shared.weight = NetworkManager.shared.swPeopleArray[indexPath.row].mass
+        ProfileManager.shared.hairColor = NetworkManager.shared.swPeopleArray[indexPath.row].hairColor
+        ProfileManager.shared.skinColor = NetworkManager.shared.swPeopleArray[indexPath.row].skinColor
+        ProfileManager.shared.eyeColor = NetworkManager.shared.swPeopleArray[indexPath.row].eyeColor
+        ProfileManager.shared.birthYear = NetworkManager.shared.swPeopleArray[indexPath.row].birthYear
+        ProfileManager.shared.gender = NetworkManager.shared.swPeopleArray[indexPath.row].gender
 
         //загружаются разные стили профилей в зависимости от пола студента
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "male" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "male" {
             performSegue(withIdentifier: "profile3VC", sender: nil)
         }
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "female" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "female" {
             performSegue(withIdentifier: "profile2VC", sender: nil)
         }
-        if NetworkManager.shared.swPeople?.people[indexPath.row].gender == "n/a" {
+        if NetworkManager.shared.swPeopleArray[indexPath.row].gender == "n/a" || NetworkManager.shared.swPeopleArray[indexPath.row].gender == "none" {
             performSegue(withIdentifier: "profileVC", sender: nil)
         }
     }

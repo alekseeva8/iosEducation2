@@ -10,6 +10,7 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var loginTextField: UITextField!
@@ -18,10 +19,30 @@ class SignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        signButton.layer.borderColor = UIColor.systemBlue.cgColor
-//        signButton.layer.borderWidth = 1
         signButton.layer.cornerRadius = 5
+
+        //добавление распознования жеста на helloLabel
+        helloLabel.isUserInteractionEnabled = true
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        helloLabel.addGestureRecognizer(swipeGesture)
     }
+    @objc func swiped(_ sender: Any) {
+        print("swiped")
+        helloLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+    }
+
+//MARK: - Gesture
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+//        super.touchesBegan(touches, with: event)
+//        helloLabel.textColor = .black
+//        helloLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+//    }
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        super.touchesEnded(touches, with: event)
+//        helloLabel.textColor = .systemBlue
+//    }
+
+//MARK: - SignInButtonPressed
     @IBAction func signInButtonPressed(_ sender: Any) {
         //условия для перехода к другому экрану (при нажатии на кнопку)
          //инициализация singleton, передача в него значения loginTF, passwordTF
