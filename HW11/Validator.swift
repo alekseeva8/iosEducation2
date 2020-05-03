@@ -60,12 +60,12 @@ extension Validator {
         return passwordIsCorrect
     }
     
-    func alertSending(_ sender: Any) {
+    func alertSending(_ sender: UIViewController) {
         let alertController = UIAlertController(title: "Incorrect login or password",
         message: "Login must contain latin symbols and numbers. Password must contain more than 6 symbols",
         preferredStyle: UIAlertController.Style.alert)
         let cancelAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
          alertController.addAction(cancelAction)
-        (sender as AnyObject).present(alertController, animated: true, completion: nil)
+        sender.present(alertController, animated: true, completion: nil)
     }
 }

@@ -83,28 +83,9 @@ extension CollectionViewController: UICollectionViewDataSource {
 
         return cell
     }
-
-    func collectionViewDesign(cell: StudentCollectionViewCell) {
-          cell.backgroundColor = .white
-          cell.layer.cornerRadius = 5
-          cell.layer.shadowRadius = 9
-          //прозрачность тени
-          cell.layer.shadowOpacity = 0.3
-          //насколько отдаляется тень
-          cell.layer.shadowOffset = CGSize(width: 5, height: 8)
-              cell.clipsToBounds = false
-    }
-
-    func activityIndicatorLayout() {
-        activityIndicator.color = .systemBlue
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor).isActive = true
-        activityIndicator.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
-        activityIndicator.hidesWhenStopped = true
-    }
 }
 
-//MARK: - Layout
+//MARK: - Layout, Design, ActivityIndicator
 extension CollectionViewController {
     func collectionViewLayout() {
         collectionView.backgroundColor = .yellow
@@ -118,6 +99,25 @@ extension CollectionViewController {
         collectionView.heightAnchor.constraint(equalToConstant: 350).isActive = true
         //collectionView.heightAnchor.constraint(lessThanOrEqualToConstant: 350).isActive = true
         //collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
+    }
+
+    func collectionViewDesign(cell: StudentCollectionViewCell) {
+          cell.backgroundColor = .white
+          cell.layer.cornerRadius = 5
+          cell.layer.shadowRadius = 9
+          //прозрачность тени
+          cell.layer.shadowOpacity = 0.3
+          //насколько отдаляется тень
+          cell.layer.shadowOffset = CGSize(width: 5, height: 8)
+          cell.clipsToBounds = false
+    }
+
+    func activityIndicatorLayout() {
+        activityIndicator.color = .systemBlue
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor).isActive = true
+        activityIndicator.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
+        activityIndicator.hidesWhenStopped = true
     }
 }
 

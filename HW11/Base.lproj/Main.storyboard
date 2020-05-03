@@ -565,7 +565,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Daw-Ri-V51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="114"/>
+            <point key="canvasLocation" x="788" y="492"/>
         </scene>
         <!--Profile2-->
         <scene sceneID="Bif-zf-6Z1">
@@ -786,7 +786,7 @@
         <image name="webinar" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cIP-oJ-LYt"/>
+        <segue reference="imG-vx-WlO"/>
         <segue reference="9Wl-X5-pJJ"/>
     </inferredMetricsTieBreakers>
 </document>
